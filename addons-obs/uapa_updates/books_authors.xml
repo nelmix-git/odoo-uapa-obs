@@ -1,0 +1,104 @@
+<?xml version="1.0" encoding="utf-8"?>
+<openerp>
+	<data>
+	<!--Action and menu for books authors-->
+	<record model="ir.actions.act_window" id="open_books_authors_view">
+		<field name="name">Books Authors</field>
+		<field name="res_model">books.authors</field>
+		<field name="view_type">form</field>
+	</record>
+
+		<menuitem name="Books Authors" id="menu_books_authors" parent="point_of_sale.menu_point_config_product" action="open_books_authors_view" sequence="10"/>
+
+	<!--Form and tree view for the books authors.-->
+	<record model="ir.ui.view" id="books_authors_form_view">
+		<field name="name">books.authors.form.view</field>
+		<field name="model">books.authors</field>
+		<field name="type">form</field>
+		<field name="arch" type="xml">
+			<form string="Books Authors" version="7.0">
+				<sheet>
+					<group>
+						<field name="code"/>
+						<field name="name"/>
+					</group>
+				</sheet>
+			</form>
+		</field>
+	</record>
+
+	<record model="ir.ui.view" id="books_authors_tree_view">
+		<field name="name">books.authors.tree.view</field>
+		<field name="model">books.authors</field>
+		<field name="type">tree</field>
+		<field name="arch" type="xml">
+				<tree string="Books authors" version="7.0">
+					<field name="code"/>
+					<field name="name"/>
+				</tree>
+		</field>
+	</record>
+
+	<!--Menu and action for book editors-->
+	<record model="ir.actions.act_window" id="open_book_editors_view">
+		<field name="name">open.book.editors.view</field>
+		<field name="res_model">book.editors</field>
+		<field name="view_type">form</field>
+	</record>
+
+	<menuitem  name="Book Editors" id="menu_book_editors" action="open_book_editors_view" parent="point_of_sale.menu_point_config_product" sequence="10"/>
+
+	<!--Form and tree view for book editors-->
+	<record model="ir.ui.view" id="book_editors_form_view">
+		<field name="name">book.editors.form.view</field>
+		<field name="model">book.editors</field>
+		<field name="type">form</field>
+		<field name="arch" type="xml">
+			<form string="Book editors" version="7.0">
+				<sheet>
+					<group>
+						<field name="code"/>
+						<field name="name"/>
+					</group>
+				</sheet>
+			</form>
+		</field>
+	</record>
+
+	<record model="ir.ui.view" id="book_editors_tree_view">
+		<field name="name">book.editors.tree.view</field>
+		<field name="model">book.editors</field>
+		<field name="type">tree</field>
+		<field name="arch" type="xml">
+			<tree string="Book editors" version="7.0">
+				<field name="code"/>
+				<field name="name"/>
+			</tree>
+		</field>
+	</record>
+
+	<record model="ir.ui.view" id="product_inherit_form_view">
+		<field name="name">product.inherit.form.view</field>
+		<field name="model">product.product</field>
+		<field name="inherit_id" ref="product.product_normal_form_view"/>
+		<field name="arch" type="xml">
+			<xpath expr="//label[@for='sale_ok']" position="after">
+				<div name="book_options">
+					<field name="is_book"/>
+					<label for="is_book"/>
+				</div>
+			</xpath>
+			<xpath expr="//field[@name='categ_id']" position="after">
+				<div name="book_fields">
+					<h4>
+					<label for="book_author_id" attrs="{'required':[('is_book','=',True)], 'invisible':[('is_book','=',False)]}"/>
+					<field name="book_author_id" attrs="{'required':[('is_book','=',True)], 'invisible':[('is_book','=',False)]}"/>
+					<label for="editorials_id" attrs="{'required':[('is_book','=',True)], 'invisible':[('is_book','=',False)]}"/>
+					<field name="editorials_id" attrs="{'required':[('is_book','=',True)], 'invisible':[('is_book','=',False)]}"/>
+					</h4>
+				</div>
+			</xpath>
+		</field>
+	</record>
+	</data>
+</openerp>

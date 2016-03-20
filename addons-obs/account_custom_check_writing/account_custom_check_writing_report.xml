@@ -1,0 +1,43 @@
+<?xml version="1.0"?>
+<openerp>
+    <data>
+        <report
+            id="action_report_check_bhd_leon"
+            model="account.voucher"
+            string="Check"
+            report_type="qweb-pdf"
+            name="account_custom_check_writing.report_check_bhd_leon"
+            file="account_custom_check_writing.report_check"
+        />
+
+        <record id="action_report_check_bhd_leon" model="ir.actions.report.xml">
+            <field name="paperformat_id" ref="account_custom_check_writing.paperformat_bhd_leon_do_check"/>
+        </record>
+
+        <report
+            id="action_report_check_bpd"
+            model="account.voucher"
+            string="Check"
+            report_type="qweb-pdf"
+            name="account_custom_check_writing.report_check_bpd"
+            file="account_custom_check_writing.report_check"
+        />
+
+        <record id="action_report_check_bpd" model="ir.actions.report.xml">
+            <field name="paperformat_id" ref="account_custom_check_writing.paperformat_l10n_do_check"/>
+        </record>
+
+        <report
+            id="action_report_check_br"
+            model="account.voucher"
+            string="Check"
+            report_type="qweb-pdf"
+            name="account_custom_check_writing.report_check_br"
+            file="account_custom_check_writing.report_check"
+        />
+
+        <record id="action_report_check_br" model="ir.actions.report.xml">
+            <field name="paperformat_id" ref="account_custom_check_writing.paperformat_br_do_check"/>
+        </record>
+    </data>
+</openerp>

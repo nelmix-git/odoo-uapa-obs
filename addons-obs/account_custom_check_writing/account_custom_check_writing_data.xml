@@ -1,0 +1,138 @@
+<?xml version="1.0" encoding="utf-8"?>
+<openerp>
+    <data noupdate="1">
+
+        <!-- Secuencia Banco de Reservas Santiago- Cta 2500014201 -->
+        <record forcecreate="1" id="sequence_type_check_number_br_stgo_2500014201" model="ir.sequence.type">
+            <field name="name">Secuencia Banco de Reservas Santiago- Cta 2500014201</field>
+            <field name="code">check.number.2500014201</field>
+        </record>
+
+        <record id="sequence_check_number_br_stgo_2500014201" model="ir.sequence">
+            <field name="name">Secuencia Banco de Reservas Santiago- Cta 2500014201</field>
+            <field name="code">check.number.2500014201</field>
+            <field eval="6" name="padding"/>
+        </record>
+
+        <!-- Secuencia Cheque BHD Santiago - Cta 02392840012 -->
+        <record forcecreate="1" id="sequence_type_check_number_bhd_stgo_02392840012" model="ir.sequence.type">
+            <field name="name">Secuencia Cheque BHD Santiago - Cta 02392840012</field>
+            <field name="code">check.number.02392840012</field>
+        </record>
+
+        <record id="sequence_check_number_bhd_stgo_02392840012" model="ir.sequence">
+            <field name="name">Secuencia Cheque BHD Santiago - Cta 02392840012</field>
+            <field name="code">check.number.02392840012</field>
+            <field eval="6" name="padding"/>
+        </record>
+
+        <!-- Secuencia Cheque BHD Santo Domingo - Cta 02392840047 -->
+        <record forcecreate="1" id="sequence_type_check_number_bhd_stdo_02392840047" model="ir.sequence.type">
+            <field name="name">Secuencia Cheque BHD Santo Domingo - Cta 02392840047</field>
+            <field name="code">check.number.02392840047</field>
+        </record>
+
+        <record id="sequence_check_number_bhd_stdo_02392840047" model="ir.sequence">
+            <field name="name">Secuencia Cheque BHD Santo Domingo - Cta 02392840047</field>
+            <field name="code">check.number.02392840047</field>
+            <field eval="6" name="padding"/>
+        </record>
+
+        <!-- Secuencia Cheque Banco de Reservas Nagua - Cta 2500045417 -->
+        <record forcecreate="1" id="sequence_type_check_number_br_ng_2500045417" model="ir.sequence.type">
+            <field name="name">Secuencia Cheque Banco de Reservas Nagua - Cta 2500045417</field>
+            <field name="code">check.number.2500045417</field>
+        </record>
+
+        <record id="sequence_check_number_br_ng_2500045417" model="ir.sequence">
+            <field name="name">Secuencia Cheque Banco de Reservas Nagua - Cta 2500045417</field>
+            <field name="code">check.number.2500045417</field>
+            <field eval="6" name="padding"/>
+        </record>
+
+        <!-- Secuencia Cheque BHD Leon Economato - Cta 2392840063 -->
+        <record forcecreate="1" id="sequence_type_check_number_bhd_leon_ec_2392840063" model="ir.sequence.type">
+            <field name="name">Secuencia Cheque BHD Leon Economato - Cta 2392840063</field>
+            <field name="code">check.number.2392840063</field>
+        </record>
+
+        <record id="sequence_check_number_bhd_leon_ec_2392840063" model="ir.sequence">
+            <field name="name">Secuencia Cheque BHD Leon Economato - Cta 2392840063</field>
+            <field name="code">check.number.2392840063</field>
+            <field eval="6" name="padding"/>
+        </record>
+
+        <!-- Secuencia Cheque BHD Leon CEGES Santiago - Cta 17843860022 -->
+        <record forcecreate="1" id="sequence_type_check_number_bhd_leon_ceg_stgo_17843860022" model="ir.sequence.type">
+            <field name="name">Secuencia Cheque BHD Leon CEGES Santiago - Cta 17843860022</field>
+            <field name="code">check.number.17843860022</field>
+        </record>
+
+        <record id="sequence_check_number_bhd_leon_ceg_stgo_17843860022" model="ir.sequence">
+            <field name="name">Secuencia Cheque BHD Leon CEGES Santiago - Cta 17843860022</field>
+            <field name="code">check.number.17843860022</field>
+            <field eval="6" name="padding"/>
+        </record>
+
+        <!-- Secuencia Cheque BHD Leon CEGES Santo Domingo - Cta 17843860014 -->
+        <record forcecreate="1" id="sequence_type_check_number_bhd_leon_ceg_stdo_17843860014" model="ir.sequence.type">
+            <field name="name">Secuencia Cheque BHD Leon CEGES Santo Domingo - Cta 17843860014</field>
+            <field name="code">check.number.17843860014</field>
+        </record>
+
+        <record id="sequence_check_number_bhd_leon_ceg_stdo_17843860014" model="ir.sequence">
+            <field name="name">Secuencia Cheque BHD Leon CEGES Santo Domingo - Cta 17843860014</field>
+            <field name="code">check.number.17843860014</field>
+            <field eval="6" name="padding"/>
+        </record>
+
+        <!-- Secuencia Cheque BHD - Leon US$ - Cta 2392840055 -->
+        <record forcecreate="1" id="sequence_type_check_number_bhd_us_2392840055" model="ir.sequence.type">
+            <field name="name">Secuencia Cheque BHD US$ - Cta 2392840055</field>
+            <field name="code">check.number.2392840055</field>
+        </record>
+
+        <record id="sequence_check_number_bhd_us_2392840055" model="ir.sequence">
+            <field name="name">Secuencia Cheque BHD US$ - Cta 2392840055</field>
+            <field name="code">check.number.2392840055</field>
+            <field eval="6" name="padding"/>
+        </record>
+
+        <!-- Secuencia Cheque BHD - Leon FUPUAPA - Cta 13823040015 -->
+        <record forcecreate="1" id="sequence_type_check_number_bhd_fupuapa_13823040015" model="ir.sequence.type">
+            <field name="name">Secuencia Cheque BHD - Leon FUPUAPA - Cta 13823040015</field>
+            <field name="code">check.number.13823040015</field>
+        </record>
+
+        <record id="sequence_check_number_bhd_fupuapa_13823040015" model="ir.sequence">
+            <field name="name">Secuencia Cheque BHD - Leon FUPUAPA - Cta 13823040015</field>
+            <field name="code">check.number.13823040015</field>
+            <field eval="6" name="padding"/>
+        </record>
+
+        <!-- Secuencia Cheque Banco Popular - Incapre - Cta 790162606 -->
+        <record forcecreate="1" id="sequence_type_check_number_bpd_inc_790162606" model="ir.sequence.type">
+            <field name="name">Secuencia Cheque Banco Popular - Incapre - Cta 790162606</field>
+            <field name="code">check.number.790162606</field>
+        </record>
+
+        <record id="sequence_check_number_bpd_inc_790162606" model="ir.sequence">
+            <field name="name">Secuencia Cheque Banco Popular - Incapre - Cta 790162606</field>
+            <field name="code">check.number.790162606</field>
+            <field eval="6" name="padding"/>
+        </record>
+
+        <!-- Secuencia Cheque Banco Popular - UAPA - Cta 790162770 -->
+        <record forcecreate="1" id="sequence_type_check_number_bpd_uapa_790162770" model="ir.sequence.type">
+            <field name="name">Secuencia Cheque Banco Popular - UAPA - Cta 790162770</field>
+            <field name="code">check.number.790162770</field>
+        </record>
+
+        <record id="sequence_check_number_bpd_uapa_790162770" model="ir.sequence">
+            <field name="name">Secuencia Cheque Banco Popular - UAPA - Cta 790162770</field>
+            <field name="code">check.number.790162770</field>
+            <field eval="6" name="padding"/>
+        </record>
+
+    </data>
+</openerp>

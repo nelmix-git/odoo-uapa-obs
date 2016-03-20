@@ -1,0 +1,143 @@
+<?xml version="1.0" encoding="utf-8"?>
+<openerp>
+<data>
+<template id="report_check_bhd_leon">
+    <t t-call="report.html_container">
+        <t t-foreach="docs" t-as="o">
+            <!-- This report is for BHD - Leon Bank Checks -->
+            <div class="page">
+
+               <table width="100%">
+                      <tr height="19">
+                        <th width="12.5%">Fecha</th>
+                        <th width="65%">Concepto de Pago</th>
+                        <th width="21.5%">Valor</th>
+                      </tr>
+                      <tr height="98.26">
+                        <td valign="center" ><span t-esc="formatLang(o.date , date=True)"/></td>
+                        <td valign="center" ><span t-field="o.name" /></td>
+                        <td valign="center" ><span t-field="o.amount" t-field-options="{&quot;widget&quot;: &quot;monetary&quot;, &quot;display_currency&quot;: &quot;o.currency_id&quot;}"/></td>
+                      </tr>
+                      <tr height="38">
+                        <td colspan="3"></td>
+                      </tr>
+                      <tr height="61">
+                        <td colspan="3"></td>
+                      </tr>
+                    </table>
+
+                    <table width="100%">
+                      <tr height="22.67">
+                        <td valign="bottom" width="585"></td>
+                        <td valign="bottom" width="129" style="font-size:16px;"><span t-esc="'     '.join(time.strftime('%d%m%Y'))"/></td>
+                        <td valign="bottom" width="19"></td>
+                      </tr>
+                    </table>
+
+                    <table width="100%">
+                      <tr height="50">
+                        <td valign="bottom" width="151"></td>
+                        <td valign="bottom" halign="center" width="378"><strong style="font-size:16px;"><span t-field="o.partner_id"/></strong></td>
+                        <td valign="bottom" width="53"></td>
+                        <td valign="bottom" width="132"><strong style="font-size:16px;"><span t-field="o.amount" t-field-options="{&quot;widget&quot;: &quot;monetary&quot;, &quot;display_currency&quot;: &quot;o.currency_id&quot;}"/></strong></td>
+                        <td valign="bottom" width="19"></td>
+                      </tr>
+                      <tr height="34">
+                        <td valign="bottom" colspan="5" style="font-size:16px;"><span t-esc="fill_stars(o.amount_in_word)"/></td>
+                      </tr>
+                    </table>
+            </div>
+        </t>
+    </t>
+</template>
+
+<template id="report_check_bpd">
+    <t t-call="report.html_container">
+        <t t-foreach="docs" t-as="o">
+            <!-- This report is for BPD Bank Checks -->
+            <div class="page">
+                <address t-field="o.partner_id"
+                    t-field-options='{"widget": "contact", "fields": ["address", "name"], "no_marker": true, "no_tag_br": true}' />
+
+                <span t-esc="formatLang(o.date , date=True)"/><br/>
+                <span t-field="o.amount"
+                    t-field-options='{"widget": "monetary", "display_currency": "o.currency_id"}'/><br/>
+                <span t-esc="fill_stars(o.amount_in_word)"/>
+
+                <table class="table table-condensed">
+                    <thead>
+                        <tr>
+                            <th>Due Date</th>
+                            <th>Description</th>
+                            <th>Original Amount</th>
+                            <th>Open Balance</th>
+                            <th>Discount</th>
+                            <th>Payment</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        <tr t-foreach="get_lines(o.line_dr_ids)" t-as="l">
+                            <td>
+                                <p t-if="l['date_due']">
+                                    <span t-esc="formatLang(l['date_due'], date=True)"/>
+                                </p>
+                            </td>
+                            <td class="text-right"><span t-esc="l['name']"/></td>
+                            <td class="text-right"><span t-esc="formatLang(l['amount_original'])"/></td>
+                            <td class="text-right"><span t-esc="formatLang(l['amount_unreconciled'])"/></td>
+                            <td class="text-right"></td>
+                            <td class="text-right"><span t-esc="formatLang(l['amount'])"/></td>
+                        </tr>
+                    </tbody>
+                </table>
+            </div>
+        </t>
+    </t>
+</template>
+
+<template id="report_check_br">
+    <t t-call="report.html_container">
+        <t t-foreach="docs" t-as="o">
+            <!-- This report is for Banreservas Bank Checks -->
+            <div class="page">
+                <address t-field="o.partner_id"
+                    t-field-options='{"widget": "contact", "fields": ["address", "name"], "no_marker": true, "no_tag_br": true}' />
+
+                <span t-esc="formatLang(o.date , date=True)"/><br/>
+                <span t-field="o.amount"
+                    t-field-options='{"widget": "monetary", "display_currency": "o.currency_id"}'/><br/>
+                <span t-esc="fill_stars(o.amount_in_word)"/>
+
+                <table class="table table-condensed">
+                    <thead>
+                        <tr>
+                            <th>Due Date</th>
+                            <th>Description</th>
+                            <th>Original Amount</th>
+                            <th>Open Balance</th>
+                            <th>Discount</th>
+                            <th>Payment</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        <tr t-foreach="get_lines(o.line_dr_ids)" t-as="l">
+                            <td>
+                                <p t-if="l['date_due']">
+                                    <span t-esc="formatLang(l['date_due'], date=True)"/>
+                                </p>
+                            </td>
+                            <td class="text-right"><span t-esc="l['name']"/></td>
+                            <td class="text-right"><span t-esc="formatLang(l['amount_original'])"/></td>
+                            <td class="text-right"><span t-esc="formatLang(l['amount_unreconciled'])"/></td>
+                            <td class="text-right"></td>
+                            <td class="text-right"><span t-esc="formatLang(l['amount'])"/></td>
+                        </tr>
+                    </tbody>
+                </table>
+            </div>
+        </t>
+    </t>
+</template>
+
+</data>
+</openerp>

@@ -1,0 +1,127 @@
+<?xml version="1.0" encoding="utf-8"?>
+	<openerp>
+	
+		<data noupdate="1">
+		
+			<record id="stock_picking_sub_rule" model="ir.rule">
+				<field name="name">Stock picking multi-subsidiary</field>
+				<field name="model_id" ref="model_stock_picking"/>
+				<field name="global" eval="True"/>
+				<field name="domain_force">['|',('subsidiary_id','=',False),('subsidiary_id','child_of',[user.subsidiary_id.id])]</field>
+			</record>
+			
+			<record id="stock_move_sub_rule" model="ir.rule">
+				<field name="name">Stock move multi-subsidiary</field>
+				<field name="model_id" ref="model_stock_move"/>
+				<field name="global" eval="True"/>
+				<field name="domain_force">['|',('subsidiary_id','=',False),('subsidiary_id','child_of',[user.subsidiary_id.id])]</field>
+			</record>
+			
+			<record id="stock_inventory_line_sub_rule" model="ir.rule">
+				<field name="name">Stock inventory line multi-subsidiary</field>
+				<field name="model_id" ref="model_stock_inventory_line"/>
+				<field name="global" eval="True"/>
+				<field name="domain_force">['|',('subsidiary_id','=',False),('subsidiary_id','child_of',[user.subsidiary_id.id])]</field>
+			</record>
+			
+			<record id="stock_inventory_sub_rule" model="ir.rule">
+				<field name="name">Stock inventory multi-subsidiary</field>
+				<field name="model_id" ref="model_stock_inventory"/>
+				<field name="global" eval="True"/>
+				<field name="domain_force">['|',('subsidiary_id','=',False),('subsidiary_id','child_of',[user.subsidiary_id.id])]</field>
+			</record>
+			
+			<record id="sale_order_line_sub_rule" model="ir.rule">
+				<field name="name">Sale order line multi-subsidiary</field>
+				<field name="model_id" ref="model_sale_order_line"/>
+				<field name="global" eval="True"/>
+				<field name="domain_force">['|',('subsidiary_id','=',False),('subsidiary_id','child_of',[user.subsidiary_id.id])]</field>
+			</record>
+			
+			<record id="sale_order_sub_rule" model="ir.rule">
+				<field name="name">Sale order multi-subsidiary</field>
+				<field name="model_id" ref="model_sale_order"/>
+				<field name="global" eval="True"/>
+				<field name="domain_force">['|',('subsidiary_id','=',False),('subsidiary_id','child_of',[user.subsidiary_id.id])]</field>
+			</record>
+			
+			<record id="purchase_requisition_line_sub_rule" model="ir.rule">
+				<field name="name">Purchase requisition line multi-subsidiary</field>
+				<field name="model_id" ref="model_purchase_requisition_line"/>
+				<field name="global" eval="True"/>
+				<field name="domain_force">['|',('subsidiary_id','=',False),('subsidiary_id','child_of',[user.subsidiary_id.id])]</field>
+			</record>
+			
+			<record id="purchase_requisition_sub_rule" model="ir.rule">
+				<field name="name">Purchase requisition multi-subsidiary</field>
+				<field name="model_id" ref="model_purchase_requisition"/>
+				<field name="global" eval="True"/>
+				<field name="domain_force">['|',('subsidiary_id','=',False),('subsidiary_id','child_of',[user.subsidiary_id.id])]</field>
+			</record>
+			
+			<record id="purchase_order_line_sub_rule" model="ir.rule">
+				<field name="name">Purchase order line multi-subsidiary</field>
+				<field name="model_id" ref="model_purchase_order_line"/>
+				<field name="global" eval="True"/>
+				<field name="domain_force">['|',('subsidiary_id','=',False),('subsidiary_id','child_of',[user.subsidiary_id.id])]</field>
+			</record>
+			
+			<record id="purchase_order_sub_rule" model="ir.rule">
+				<field name="name">Purchase order multi-subsidiary</field>
+				<field name="model_id" ref="model_purchase_order"/>
+				<field name="global" eval="True"/>
+				<field name="domain_force">['|',('subsidiary_id','=',False),('subsidiary_id','child_of',[user.subsidiary_id.id])]</field>
+			</record>
+			
+			<record id="procurement_order_sub_rule" model="ir.rule">
+				<field name="name">Procurement order multi-subsidiary</field>
+				<field name="model_id" ref="model_procurement_order"/>
+				<field name="global" eval="True"/>
+				<field name="domain_force">['|',('subsidiary_id','=',False),('subsidiary_id','child_of',[user.subsidiary_id.id])]</field>
+			</record>
+			
+			<record id="crossovered_budget_lines_sub_rule" model="ir.rule">
+				<field name="name">Crossovered budget line multi-subsidiary</field>
+				<field name="model_id" ref="model_crossovered_budget_lines"/>
+				<field name="global" eval="True"/>
+				<field name="domain_force">['|',('subsidiary_id','=',False),('subsidiary_id','child_of',[user.subsidiary_id.id])]</field>
+			</record>
+			
+			<record id="crossovered_budget_sub_rule" model="ir.rule">
+				<field name="name">Crossovered budget multi-subsidiary</field>
+				<field name="model_id" ref="model_crossovered_budget"/>
+				<field name="global" eval="True"/>
+				<field name="domain_force">['|',('subsidiary_id','=',False),('subsidiary_id','child_of',[user.subsidiary_id.id])]</field>
+			</record>
+			
+			<record id="account_voucher_line_sub_rule" model="ir.rule">
+				<field name="name">Account voucher line multi-subsidiary</field>
+				<field name="model_id" ref="model_account_voucher_line"/>
+				<field name="global" eval="True"/>
+				<field name="domain_force">['|',('subsidiary_id','=',False),('subsidiary_id','child_of',[user.subsidiary_id.id])]</field>
+			</record>
+			
+			<record id="account_voucher_sub_rule" model="ir.rule">
+				<field name="name">Account voucher multi-subsidiary</field>
+				<field name="model_id" ref="model_account_voucher"/>
+				<field name="global" eval="True"/>
+				<field name="domain_force">['|',('subsidiary_id','=',False),('subsidiary_id','child_of',[user.subsidiary_id.id])]</field>
+			</record>
+			
+			<record id="account_invoice_sub_rule" model="ir.rule">
+				<field name="name">Account invoice multi-subsidiary</field>
+				<field name="model_id" ref="model_account_invoice"/>
+				<field name="global" eval="True"/>
+				<field name="domain_force">['|',('subsidiary_id','=',False),('subsidiary_id','child_of',[user.subsidiary_id.id])]</field>
+			</record>
+			
+			<record id="account_journal_sub_rule" model="ir.rule">
+				<field name="name">Account journal multi-subsidiary</field>
+				<field name="model_id" ref="model_account_journal"/>
+				<field name="global" eval="True"/>
+				<field name="domain_force">['|',('subsidiary_id','=',False),('subsidiary_id','child_of',[user.subsidiary_id.id])]</field>
+			</record>
+
+		</data>
+	
+	</openerp>

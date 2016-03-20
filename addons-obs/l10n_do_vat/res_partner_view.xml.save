@@ -1,0 +1,43 @@
+<?xml version="1.0" encoding="utf-8"?>
+<openerp>
+<data>
+   
+    <!--<record id="res_partner_vat_account_inherit" model="ir.ui.view">-->
+        <!--<field name="name">res.partner.vat.account.inherit</field>-->
+        <!--<field name="model">res.partner</field>-->
+        <!--<field name="inherit_id" ref="account.view_partner_property_form"/>-->
+        <!--<field name="arch" type="xml">-->
+            <!--<xpath expr="//field[@name='property_account_position']" position="after" version="7.0">-->
+                <!--<field name="vat_type"/>-->
+                <!--<field name="rnc" attrs="{'invisible':[('vat_type','!=','rnc')]}"/>-->
+                <!--<field name="personal_id" on_change="onchange_personal_id(personal_id, context)" attrs="{'invisible':[('vat_type','!=','personal_id')]}"/>-->
+                <!--<button string="Validate RNC" attrs="{'invisible':[('vat_type','!=','rnc')]}" name="validate_rnc" type="object"/>-->
+            <!--</xpath>-->
+        <!--</field>-->
+    <!--</record>-->
+    
+    <!--record id="res_partner_vat_inherit" model="ir.ui.view">
+                <field name="name">res.partner.vat.inherit</field>
+                <field name="model">res.partner</field>
+                <field name="inherit_id" ref="base_vat.view_partner_form" />
+                <field name="arch" type="xml">
+IN
+  Verificar validez 
+
+Pedidos de compra Facturas de proveedor                    <xpath expr="//label[@for='vat']" position="replace">
+                        <label for="vat_type"/>
+                    </xpath>
+                    <xpath expr="//div[@name='vat_info']" position="replace" version="7.0">
+                        <div name="rnc_validation" class="oe_inline">
+                            <field name="vat_type" class="oe_inline"/>
+                            <field name="rnc" attrs="{'invisible':[('vat_type','!=','rnc')]}" class="oe_inline"/>
+                            <field name="personal_id" on_change="onchange_personal_id(personal_id, context)" attrs="{'invisible':
+                            [('vat_type','!=','personal_id')]}" class="oe_inline"/>
+                            <button string="Validate RNC" attrs="{'invisible':[('vat_type','!=','rnc')]}" class="oe_inline" name="validate_rnc" type="object"/>
+                    </div>
+                    </xpath>
+            </field>
+    </record-->
+    
+</data>
+</openerp>

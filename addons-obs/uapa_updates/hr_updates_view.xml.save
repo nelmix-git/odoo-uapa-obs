@@ -1,0 +1,501 @@
+<?xml version="1.0" encoding="utf-8"?>
+<openerp>
+	<data>
+		<record model="ir.ui.view" id="hr_contract_news_inherit">
+			<field name="name">hr.contract.news.inherit</field>
+			<field name="model">hr.contract</field>
+			<field name="priority">20</field>
+			<field name="inherit_id" ref="hr_contract.hr_contract_view_form" />
+			<field name="arch" type="xml">
+				<data>
+				  <xpath expr="//field[@name='type_id']" position="after">
+				    <field name="company_id"/>
+				  </xpath>
+				  <xpath expr="//field[@name='date_end']" position="after">
+				    <field name="contract_years"/>
+				    <field name="contract_days"/>
+				  </xpath>
+				  <xpath expr="//page[@name='information']" position="after">
+				    <page name="contract_news" string="Contract News">
+				      <group>
+					<group name="contract_news_fortnightly_1" string="Desc. Primera Quincena">
+					  <field name="ceg_discount_fortnightly_1"/>
+					  <field name="cel_discount_fortnightly_1"/>
+					  <field name="coop_discount_fortnightly_1"/>
+					  <field name="des_discount_fortnightly_1"/>
+					  <field name="dle_discount_fortnightly_1"/>
+					  <field name="doc_discount_fortnightly_1"/>
+					  <field name="dpg_discount_fortnightly_1"/>
+					  <field name="dpi_discount_fortnightly_1"/>
+					  <field name="dpt_discount_fortnightly_1"/>
+					  <field name="eco_discount_fortnightly_1"/>
+					  <field name="gr_discount_fortnightly_1"/>
+					  <field name="pba_discount_fortnightly_1"/>
+					  <field name="pfc_discount_fortnightly_1"/>
+					  <field name="pma_discount_fortnightly_1"/>
+					  <field name="pre_discount_fortnightly_1"/>
+					  <field name="smc_discount_fortnightly_1"/>
+					  <field name="uni_discount_fortnightly_1"/>
+					</group>
+					<group name="contract_news_fortnightly_2" string="Desc. Segunda Quincena">
+					  <field name="ceg_discount_fortnightly_2"/>
+					  <field name="cel_discount_fortnightly_2"/>
+					  <field name="coop_discount_fortnightly_2"/>
+					  <field name="des_discount_fortnightly_2"/>
+					  <field name="dle_discount_fortnightly_2"/>
+					  <field name="doc_discount_fortnightly_2"/>
+					  <field name="dpg_discount_fortnightly_2"/>
+					  <field name="dpi_discount_fortnightly_2"/>
+					  <field name="dpt_discount_fortnightly_2"/>
+					  <field name="eco_discount_fortnightly_2"/>
+					  <field name="gr_discount_fortnightly_2"/>
+					  <field name="pba_discount_fortnightly_2"/>
+					  <field name="pfc_discount_fortnightly_2"/>
+					  <field name="pma_discount_fortnightly_2"/>
+					  <field name="pre_discount_fortnightly_2"/>
+					  <field name="smc_discount_fortnightly_2"/>
+					  <field name="uni_discount_fortnightly_2"/>
+					</group>
+					<group name="contract_news_monthly" string="Desc. Mensual" attrs="{'visible':[('schedule_pay','=', 'monthly')]}">
+					  <field name="ceg_discount_monthly"/>
+					  <field name="cel_discount_monthly"/>
+					  <field name="coop_discount_monthly"/>
+					  <field name="des_discount_monthly"/>
+					  <field name="dle_discount_monthly"/>
+					  <field name="doc_discount_monthly"/>
+					  <field name="dpg_discount_monthly"/>
+					  <field name="dpi_discount_monthly"/>
+					  <field name="dpt_discount_monthly"/>
+					  <field name="eco_discount_monthly"/>
+					  <field name="gr_discount_monthly"/>
+					  <field name="pba_discount_monthly"/>
+					  <field name="pfc_discount_monthly"/>
+					  <field name="pma_discount_monthly"/>
+					  <field name="pre_discount_monthly"/>
+					  <field name="smc_discount_monthly"/>
+					  <field name="uni_discount_monthly"/>
+					</group>
+				      </group>
+				     <group name="ceges" string="Beca Ceges" col="6"/>
+                                     <group name="ceges_apply>
+ 						<field name="ceg_apply"/>
+				     </group>
+				     <group name="ceges_details"
+                                                <field name="ceg_discount_amount" attrs="{'invisible':[('ceg_apply','=',False)], 'required':[('ceg_apply','=',True)]}"/>
+                                                <field name="ceg_frecuency_type" attrs="{'invisible':[('ceg_apply','=',False)], 'required':[('ceg_apply','=',True)]}"/>
+                                                <field name="ceg_apply_on" attrs="{'invisible':[('ceg_apply','=',False)], 'required':[('ceg_apply','=',True)] }"/>
+                                                <field name="ceg_frecuency_number" attrs="{'readonly':[('ceg_frecuency_type','=', 'fixed')],'required':[('ceg_frecuency_type','=', 'variable')] ,'invisible':[('ceg_apply','=',False)], 'invisible':[('ceg_frecuency_type','=',False)]}"/>
+                                                <field name="ceg_start_date" attrs="{'readonly':[('ceg_frecuency_type','=', 'fixed')],'required':[('ceg_frecuency_type','=', 'variable')] ,'invisible':[('ceg_apply','=',False)]}"/>
+                                                <field name="ceg_end_date" attrs="{'readonly':[('ceg_frecuency_type','=', 'fixed')],'required':[('ceg_frecuency_type','=', 'variable')] ,'invisible':[('ceg_apply','=',False)]}"/>
+                                     </group>
+                     		     <group name="celular" string="Celular - Perdida de Flota" col="6">
+                                                <field name="cel_discount_amount"/>
+                                                <field name="cel_frecuency_type"/>
+                                                <field name="cel_apply_on"/>
+                                                <field name="cel_frecuency_number" attrs="{'readonly':[('cel_frecuency_type','=', 'fixed')]}"/>
+                                                <field name="cel_start_date" attrs="{'readonly':[('cel_frecuency_type','=', 'fixed')]}"/>
+                                                <field name="cel_end_date" attrs="{'readonly':[('cel_frecuency_type','=', 'fixed')]}"/>
+                                     </group>
+          
+                                     <group name="cooperativa" string="Cooperativa" col="6">
+                                                <field name="coop_discount_amount"/>
+                                                <field name="coop_frecuency_type"/>
+                                                <field name="coop_apply_on"/>
+                                                <field name="coop_frecuency_number" attrs="{'readonly':[('coop_frecuency_type','=', 'fixed')]}"/>
+                                                <field name="coop_start_date" attrs="{'readonly':[('coop_frecuency_type','=', 'fixed')]}"/>
+                                                <field name="coop_end_date" attrs="{'readonly':[('coop_frecuency_type','=', 'fixed')]}"/>
+                                     </group>
+				     <group name="otros" string="Otros Descuentos" col="6">
+                                                <field name="des_discount_amount"/>
+                                                <field name="des_frecuency_type"/>
+                                                <field name="des_apply_on"/>
+                                                <field name="des_frecuency_number" attrs="{'readonly':[('des_frecuency_type','=', 'fixed')]}"/>
+                                                <field name="des_start_date" attrs="{'readonly':[('des_frecuency_type','=', 'fixed')]}"/>
+                                                <field name="des_end_date" attrs="{'readonly':[('des_frecuency_type','=', 'fixed')]}"/>
+                                     </group>
+				     <group name="lentes" string="Descuento Lentes" col="6">
+                                                <field name="dle_discount_amount"/>
+                                                <field name="dle_frecuency_type"/>
+                                                <field name="dle_apply_on"/>
+                                                <field name="dle_frecuency_number" attrs="{'readonly':[('dle_frecuency_type','=', 'fixed')]}"/>
+                                                <field name="dle_start_date" attrs="{'readonly':[('dle_frecuency_type','=', 'fixed')]}"/>
+                                                <field name="dle_end_date" attrs="{'readonly':[('dle_frecuency_type','=', 'fixed')]}"/>
+                                     </group>
+                   		     <group name="doctorado" string="Doctorado" col="6">
+                                                <field name="doc_discount_amount"/>
+                                                <field name="doc_frecuency_type"/>
+                                                <field name="doc_apply_on"/>
+                                                <field name="doc_frecuency_number" attrs="{'readonly':[('doc_frecuency_type','=', 'fixed')]}"/>
+                                                <field name="doc_start_date" attrs="{'readonly':[('doc_frecuency_type','=', 'fixed')]}"/>
+                                                <field name="doc_end_date" attrs="{'readonly':[('doc_frecuency_type','=', 'fixed')]}"/>
+                                     </group>
+
+				    <group name="postgrado" string="Descuento Postgrado" col="6">
+                                                <field name="dpg_discount_amount"/>
+                                                <field name="dpg_frecuency_type"/>
+                                                <field name="dpg_apply_on"/>
+                                                <field name="dpg_frecuency_number" attrs="{'readonly':[('dpg_frecuency_type','=', 'fixed')]}"/>
+                                                <field name="dpg_start_date" attrs="{'readonly':[('dpg_frecuency_type','=', 'fixed')]}"/>
+                                                <field name="dpg_end_date" attrs="{'readonly':[('dpg_frecuency_type','=', 'fixed')]}"/>
+                                     </group>
+
+				     <group name="economato" string="Descuento Economato" col="6">
+                                                <field name="eco_discount_amount"/>
+                                                <field name="eco_frecuency_type"/>
+                                                <field name="eco_apply_on"/>
+                                                <field name="eco_frecuency_number" attrs="{'readonly':[('eco_frecuency_type','=', 'fixed')]}"/>
+                                                <field name="eco_start_date" attrs="{'readonly':[('eco_frecuency_type','=', 'fixed')]}"/>
+                                                <field name="eco_end_date" attrs="{'readonly':[('eco_frecuency_type','=', 'fixed')]}"/>
+                                     </group>
+				    <group name="graduacion" string="Pago Derecho a Graduacion" col="6">
+                                                <field name="grd_discount_amount"/>
+                                                <field name="grd_frecuency_type"/>
+                                                <field name="grd_apply_on"/>
+                                                <field name="grd_frecuency_number" attrs="{'readonly':[('grd_frecuency_type','=', 'fixed')]}"/>
+                                                <field name="grd_start_date" attrs="{'readonly':[('grd_frecuency_type','=', 'fixed')]}"/>
+                                                <field name="grd_end_date" attrs="{'readonly':[('grd_frecuency_type','=', 'fixed')]}"/>
+                                     </group>
+				     <group name="pba" string="PBA Seguro Medico" col="6">
+                                                <field name="pba_discount_amount"/>
+                                                <field name="pba_frecuency_type"/>
+                                                <field name="pba_apply_on"/>
+                                                <field name="pba_frecuency_number" attrs="{'readonly':[('pba_frecuency_type','=', 'fixed')]}"/>
+                                                <field name="pba_start_date" attrs="{'readonly':[('pba_frecuency_type','=', 'fixed')]}"/>
+                                                <field name="pba_end_date" attrs="{'readonly':[('pba_frecuency_type','=', 'fixed')]}"/>
+                                     </group>
+				     <group name="faltante" string="Faltante en Caja" col="6">
+                                                <field name="pfc_discount_amount"/>
+                                                <field name="pfc_frecuency_type"/>
+                                                <field name="pfc_apply_on"/>
+                                                <field name="pfc_frecuency_number" attrs="{'readonly':[('pfc_frecuency_type','=', 'fixed')]}"/>
+                                                <field name="pfc_start_date" attrs="{'readonly':[('pfc_frecuency_type','=', 'fixed')]}"/>
+                                                <field name="pfc_end_date" attrs="{'readonly':[('pfc_frecuency_type','=', 'fixed')]}"/>
+                                     </group>
+                                     <group name="maestria" string="Pago de Maestria" col="6">
+                                                <field name="pma_discount_amount"/>
+                                                <field name="pma_frecuency_type"/>
+                                                <field name="pma_apply_on"/>
+                                                <field name="pma_frecuency_number" attrs="{'readonly':[('grd_frecuency_type','=', 'fixed')]}"/>
+                                                <field name="pma_start_date" attrs="{'readonly':[('grd_frecuency_type','=', 'fixed')]}"/>
+                                                <field name="pma_end_date" attrs="{'readonly':[('grd_frecuency_type','=', 'fixed')]}"/>
+                                     </group>
+                                     <group name="prestamos" string="Prestamos" col="6">
+                                                <field name="pre_discount_amount"/>
+                                                <field name="pre_frecuency_type"/>
+                                                <field name="pre_apply_on"/>
+                                                <field name="pre_frecuency_number" attrs="{'readonly':[('pre_frecuency_type','=', 'fixed')]}"/>
+                                                <field name="pre_start_date" attrs="{'readonly':[('pre_frecuency_type','=', 'fixed')]}"/>
+                                                <field name="pre_end_date" attrs="{'readonly':[('pre_frecuency_type','=', 'fixed')]}"/>
+                                     </group>
+                                     <group name="complementario" string="Seguro Medico Complementario" col="6">
+                                                <field name="smc_discount_amount"/>
+                                                <field name="smc_frecuency_type"/>
+                                                <field name="smc_apply_on"/>
+                                                <field name="smc_frecuency_number" attrs="{'readonly':[('smc_frecuency_type','=', 'fixed')]}"/>
+                                                <field name="smc_start_date" attrs="{'readonly':[('smc_frecuency_type','=', 'fixed')]}"/>
+                                                <field name="smc_end_date" attrs="{'readonly':[('smc_frecuency_type','=', 'fixed')]}"/>
+                                     </group>
+                                     <group name="uniforme" string="Uniforme" col="6">
+                                                <field name="uni_discount_amount"/>
+                                                <field name="uni_frecuency_type"/>
+                                                <field name="uni_apply_on"/>
+                                                <field name="uni_frecuency_number" attrs="{'readonly':[('uni_frecuency_type','=', 'fixed')]}"/>
+                                                <field name="uni_start_date" attrs="{'readonly':[('uni_frecuency_type','=', 'fixed')]}"/>
+                                                <field name="uni_end_date" attrs="{'readonly':[('uni_frecuency_type','=', 'fixed')]}"/>
+                                     </group>
+
+
+				    </page>
+				  </xpath>
+					<!--xpath expr="//page[@name='information']" position="inside">
+						<group name="contract_news" string="Contract News">
+							<field name="hr_contract_news_ids" mode="tree" nolabel="1" colspan="2">
+								<tree string="HR Contract news" version="7.0" editable="top">
+									<field name="hr_contract_news_concepts_id" widget="selection" />
+									<field name="amount" />
+									<field name="apply_on" />
+									<field name="frecuency_type" />
+									<field name="frecuency_number" attrs="{'readonly':[('frecuency_type','=', 'fixed')]}" />
+									<field name="start_date" attrs="{'readonly':[('frecuency_type','=', 'fixed')]}"/>
+									<field name="end_date" attrs="{'readonly':[('frecuency_type','=', 'fixed')]}"/>
+								</tree>
+							</field>
+						</group>
+					</xpath-->
+					<xpath expr="//field[@name='schedule_pay']" position="replace">
+						<field name="schedule_pay"/>
+					</xpath>
+					<xpath expr="//field[@name='job_id']" position="after">
+               			<field name="payroll_type" required="1"/>
+           			</xpath>
+				</data>
+			</field>
+		</record>
+
+		<record model="ir.actions.act_window" id="open_view_contract_news_concepts">
+			<field name="name">open.view.contract.news.concepts</field>
+			<field name="res_model">hr.contract.news.concepts</field>
+			<field name="view_type">form</field>
+			<field name="view_mode">form,tree</field>
+		</record>
+
+		<record model="ir.actions.act_window" id="open_view_ars">
+			<field name="name">open.view.ars</field>
+			<field name="res_model">hr.employee.ars</field>
+			<field name="view_type">form</field>
+			<field name="view_mode">form,tree</field>
+		</record>
+
+		<record model="ir.actions.act_window" id="open_view_careers">
+			<field name="name">open.view.careers</field>
+			<field name="res_model">hr.recruitment.career</field>
+			<field name="view_type">form</field>
+			<field name="view_mode">form,tree</field>
+		</record>
+
+		<menuitem name="Contract News Concepts" action="open_view_contract_news_concepts" parent="hr.menu_hr_configuration"  id="menu_contract_news_concepts" />
+		<menuitem name="Careers" action="open_view_careers" parent="hr.menu_hr_configuration"  id="menu_employee_careers" />
+		<menuitem name="ARS" action="open_view_ars" parent="hr.menu_hr_configuration" id="menu_employee_ars"/>
+
+		<record model="ir.ui.view" id="hr_contract_news_concepts_form">
+			<field name="name">hr.contract.news.concepts.form</field>
+			<field name="model">hr.contract.news.concepts</field>
+			<field name="type">form</field>
+			<field name="arch" type="xml">
+				<form string="Contract News Concepts" version="7.0">
+					<group name="hr_contract_news" string="Contract News Concepts">
+						<field name="code" />
+						<field name="name"/>
+						<field name="category_id"/>
+					</group>
+				</form>
+			</field>
+		</record>
+
+		<record model="ir.ui.view" id="hr_contract_news_concepts_tree">
+			<field name="name">hr.contract.news.concepts.tree</field>
+			<field name="model">hr.contract.news.concepts</field>
+			<field name="type">tree</field>
+			<field name="arch" type="xml">
+				<tree string="Contract News Concepts" version="7.0">
+					<field name="code" />
+					<field name="name"/>
+					<field name="category_id"/>
+				</tree>
+			</field>
+		</record>
+
+
+		<record model="ir.ui.view" id="hr_employee_ars_form">
+			<field name="name">hr.employee.ars.form</field>
+			<field name="model">hr.employee.ars</field>
+			<field name="type">form</field>
+			<field name="arch" type="xml">
+				<form string="ARS" version="7.0">
+					<group name="hr_ars" string="ARS">
+						<field name="sequence" />
+						<field name="name"/>
+					</group>
+				</form>
+			</field>
+		</record>
+
+		<record model="ir.ui.view" id="hr_employee_ars_tree">
+			<field name="name">hr.employee.ars.tree</field>
+			<field name="model">hr.employee.ars</field>
+			<field name="type">tree</field>
+			<field name="arch" type="xml">
+				<tree string="ARS" version="7.0" nolabel="1" colspan="2">
+					<field name="sequence"/>
+					<field name="name"/>
+				</tree>
+			</field>
+		</record>
+
+		<record model="ir.ui.view" id="hr_recruitment_career_form">
+			<field name="name">hr.recruitment.career.form</field>
+			<field name="model">hr.recruitment.career</field>
+			<field name="type">form</field>
+			<field name="arch" type="xml">
+					<form string="Careers"  version="7.0">
+						<group name="hr_careers" string="Careers">
+							<field name="sequence"/>
+							<field name="name" />
+						</group>
+					</form>
+			</field>
+		</record>
+
+		<record model="ir.ui.view" id="hr_recruitment_career_tree">
+			<field name="name">hr.recruitment.career.tree</field>
+			<field name="model">hr.recruitment.career</field>
+			<field name="type">tree</field>
+			<field name="arch" type="xml">
+				<tree string="Careers" version="7.0" nolabel="1" colspan="2">
+					<field name="sequence"/>
+					<field name="name"/>
+				</tree>
+			</field>
+		</record>
+
+		<record model="ir.ui.view" id="hr_employee_form_inherit">
+			<field name="name">hr.employee.form.inherit</field>
+			<field name="model">hr.employee</field>
+			<field name="inherit_id" ref="hr.view_employee_form"/>
+			<field name="arch" type="xml">
+				<data>
+					<xpath expr="//field[@name='image_medium']" position="after">
+						<field name="employee_code"/>
+					</xpath>
+					<xpath expr="//field[@name='address_home_id']" position="before">
+						<field name="employee_code"/>
+					</xpath>
+					<xpath expr="//field[@name='address_home_id']" position="after">
+						<field name="partner_phone" />
+					</xpath>
+                    <xpath expr="//page[@string='Public Information']" position="after">
+                    </xpath>
+					<xpath expr="//page[@string='Public Information']" position="inside">
+							<group name="emergency_contacts" string="Emergency Contacts">
+								<field name="emergency_contact" mode="tree" nolabel="1" colspan= "2" >
+									<tree string="Emergency Contact" version="7.0" editable="top">
+										<field name="name"/>
+										<field name="emergency_contact_phone"/>
+									</tree>
+								</field>
+							</group>
+						</xpath>
+						<xpath expr="//field[@name='passport_id']" position="after">
+							<field name="nss_id"/>
+							<field name="hr_employee_ars_id"/>
+					</xpath>
+						<xpath expr="//page[@string='Personal Information']" position="inside">
+							<group name="family_info" string="Family Info">
+								<field name="family_info_ids" mode="tree" nolabel="1" colspan="2">
+									<tree string="Family Info" version="7.0" editable="top">
+										<field name="name"/>
+										<field name="relationship"/>
+										<field name="gender"/>
+										<field name="date_of_birth"/>
+									</tree>
+								</field>
+							</group>
+						</xpath>
+						<xpath expr="//page[@string='HR Settings']" position="after">
+							<page string="Proffesional Formation">
+								<field name="formation_ids">
+									<tree version="7.0">
+										<field name="career_id"/>
+										<field name="degree_id"/>
+										<field name="date_start"/>
+										<field name="date_end"/>
+										<field name="specialization"/>
+									</tree>
+								</field>
+							</page>
+						</xpath>
+						<!--<xpath expr="//page[@string='Personal Information']" position="after">
+							<page name="events_information" string="Events Information">
+								<field name="event_training_id"/>
+								<field name="events_ids_registration"/>
+							</page>
+						</xpath>-->
+				</data>
+			</field>
+		</record>
+
+		<record model="ir.ui.view" id="hr_expenses_events">
+			<field name="name">hr.expenses.events</field>
+			<field name="model">hr.expense.expense</field>
+			<field name="inherit_id" ref="hr_expense.view_expenses_form"/>
+			<field name="arch" type="xml">
+				<xpath expr="//field[@name='department_id']" position="after">
+					<field name="expense_type"/>
+					<field name="event_id"  attrs="{'invisible':[('expense_type','!=', 'event')]}" />
+					<field name="proyect_id" attrs="{'invisible':[('expense_type','!=', 'project')]}"/>
+				</xpath>
+			</field>
+		</record>
+
+		<record model="ir.ui.view" id="hr_payslip_payment_period">
+			<field name="name">hr.payslip.payment.period</field>
+			<field name="model">hr.payslip</field>
+			<field name="inherit_id" ref="hr_payroll.view_hr_payslip_form"/>
+			<field name="arch" type="xml">
+				<xpath expr="//field[@name='name']" position="after">
+				  <field name="payment_period" attrs="{'readonly':[('state','not in', 'draft')]}"/>
+                                  <field name="payroll_type" attrs="{'readonly':[('state','not in', 'draft')]}"/>
+				</xpath>
+			</field>
+		</record>
+
+		<record model="ir.ui.view" id="hr_payslip_run_payment_period">
+			<field name="name">hr.payslip.run.payment.period</field>
+			<field name="model">hr.payslip.run</field>
+			<field name="inherit_id" ref="hr_payroll.hr_payslip_run_form"/>
+			<field name="arch" type="xml">
+				<xpath expr="//field[@name='credit_note']" position="after">
+				  	<field name="payment_period" attrs="{'readonly':[('state','not in', 'draft')]}"/>
+                                        <field name="payroll_type" attrs="{'readonly':[('state','not in', 'draft')]}"/>
+				</xpath>
+			</field>
+		</record>
+
+               <record model="ir.ui.view" id="hr_payslip_run_journal">
+                        <field name="name">hr.payslip.run.journal</field>
+                        <field name="model">hr.payslip.run</field>
+                        <field name="inherit_id" ref="hr_payroll_account.hr_payslip_run_form_inherit"/>
+                        <field name="arch" type="xml">
+                               <xpath expr="//field[@name='journal_id']" position="replace">
+                                   <field name="journal_id" required="1" domain="[('is_salary_journal','=',True)]"/>
+                               </xpath>
+                        </field>
+                </record>
+
+		<record model="ir.ui.view" id="hr_salary_rule_name">
+			<field name="name">hr.salary.rule.name</field>
+			<field name="model">hr.salary.rule</field>
+			<field name="inherit_id" ref="hr_payroll.hr_salary_rule_form"/>
+			<field name="arch" type="xml">
+			  <xpath expr="//label[@for='name']" position="replace">
+			    <label for="name" invisible="True"/>
+			  </xpath>
+			  <xpath expr="//field[@name='name']" position="replace">
+			    <field name="name" invisible="True"/>
+			  </xpath>
+			  <xpath expr="//label[@for='name']" position="before">
+			    <h2>
+			      <label for="name_onchange" class="oe_edit_only"/>
+			      <field name="name_onchange" on_change="onchange_name(name_onchange, context)"/>
+			    </h2>
+			  </xpath>
+			</field>
+		</record>
+
+		<record model="ir.ui.view" id="hr_contract_view_form_inherit">
+        <field name="name">hr.contract.view.form.inherit</field>
+        <field name="model">hr.contract</field>
+        <field name="inherit_id" ref="hr_payroll_account.hr_contract_form_inherit"/>
+        <field name="arch" type="xml">
+            <xpath expr="//field[@name='analytic_account_id']" position="replace">
+                <field name="analytic_account_id" required="1" groups="analytic.group_analytic_accounting"/>
+            </xpath>
+            <xpath expr="//field[@name='journal_id']" position="replace">
+            	<field name="journal_id" required="1" domain="[('is_salary_journal','=',True)]"/>
+            </xpath>
+        </field>
+    </record>
+
+    <record model="ir.ui.view" id="hr_contract_modify_employee">
+    	<field name="name">hr.contract.modify.employee</field>
+    	<field name="model">hr.contract</field>
+    	<field name="inherit_id" ref="hr_contract.hr_contract_view_form"/>
+    	<field name="arch" type="xml">
+    		<xpath expr="//field[@name='employee_id']" position="replace">
+    			<field name="employee_id" on_change="onchange_employee(employee_id, context)"
+/>
+			</xpath>
+		</field>
+	</record>
+	</data>
+</openerp>

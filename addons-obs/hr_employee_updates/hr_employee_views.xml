@@ -1,0 +1,18 @@
+<?xml version="1.0" encoding="utf-8"?>
+<openerp>
+<data>
+    
+    <!-- Planified action for account bank create entry>
+    <record model="ir.cron" id="account_asset_create_entry">
+        <field name="name">Run account bank entry job</field>
+        <field name="active" eval="True"/>
+        <field name="interval_number">1</field>
+        <field name="interval_type">days</field>
+        <field name="numbercall">-1</field>
+        <field name="model">hr.employee</field>
+        <field name="function">employee_bank_association</field>
+        <field name="args">()</field>
+    </record-->
+  
+</data>
+</openerp>

@@ -1,0 +1,16 @@
+<?xml version="1.0" encoding="utf-8"?>
+<openerp>
+    <data>
+        <record model="ir.ui.view" id="account_journal_inherit_form">
+            <field name="name">account.journal.inherit.form</field>
+            <field name="model">account.journal</field>
+            <field name="inherit_id" ref="account.view_account_journal_form"/>
+            <field name="arch" type="xml">
+                <xpath expr="//field[@name='use_preprint_check']" position="after">
+                    <field name="allow_transfer"/>
+                </xpath>
+            </field>
+        </record>
+
+    </data>
+</openerp>

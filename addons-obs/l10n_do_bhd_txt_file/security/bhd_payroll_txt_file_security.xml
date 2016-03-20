@@ -1,0 +1,15 @@
+<?xml version="1.0" encoding="utf-8"?>
+	<openerp>
+	
+		<data noupdate="1">
+		
+			<record id="bhd_payroll_txt_file_sub_rule" model="ir.rule">
+				<field name="name">BHD TXT File multi-subsidiary</field>
+				<field name="model_id" ref="model_bdh_payslip_run_report"/>
+				<field name="global" eval="True"/>
+				<field name="domain_force">['|',('subsidiary_id','=',False),('subsidiary_id','child_of',[user.subsidiary_id.id])]</field>
+			</record>
+
+		</data>
+	
+	</openerp>

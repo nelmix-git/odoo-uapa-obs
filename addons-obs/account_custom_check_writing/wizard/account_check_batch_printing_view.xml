@@ -1,0 +1,257 @@
+<?xml version="1.0" encoding="utf-8"?>
+<openerp>
+    <data noupdate="0">
+        <!-- ============================================================================================================== -->
+        <record id="view_account_check_write_br_stgo_2500014201" model="ir.ui.view">
+            <field name="name">account.check.write.br.stgo.2500014201</field>
+            <field name="model">account.check.write.br.stgo.2500014201</field>
+            <field name="arch" type="xml">
+                <form string="Imprimir Cheque(s) Banco de Reservas Santiago- Cta 2500014201">
+                    <group col="4">
+                        <field name="check_number"/>
+                    </group>
+                    <footer>
+                        <button name="print_check_write_br_stgo_2500014201" string="Imprimir Cheque(s) Banco de Reservas Santiago- Cta 2500014201" type="object" class="oe_highlight"/> or
+                        <button string="Cancel" class="oe_link" special="cancel"/>
+                    </footer>
+                </form>
+            </field>
+        </record>
+
+        <act_window id="action_account_check_write_br_stgo_2500014201"
+            multi="True"
+            name="Imprimir Cheque(s) Banco de Reservas Santiago- Cta 2500014201"
+            res_model="account.check.write.br.stgo.2500014201" src_model="account.voucher"
+            view_mode="form" target="new" view_type="form" />
+
+        <!-- ============================================================================================================== -->
+        <record id="view_account_check_write_bhd_stgo_02392840012" model="ir.ui.view">
+            <field name="name">account.check.write.bhd.stgo.02392840012</field>
+            <field name="model">account.check.write.bhd.stgo.02392840012</field>
+            <field name="arch" type="xml">
+                <form string="Imprimir Cheque(s) Banco de Reservas Santiago- Cta 2500014201">
+                    <group col="4">
+                        <field name="check_number"/>
+                    </group>
+                    <footer>
+                        <button name="print_check_write_bhd_stgo_02392840012" string="Imprimir Cheque(s) BHD Santiago - Cta 02392840012" type="object" class="oe_highlight"/> or
+                        <button string="Cancel" class="oe_link" special="cancel"/>
+                    </footer>
+                </form>
+            </field>
+        </record>
+
+        <act_window id="action_account_check_write_bhd_stgo_02392840012"
+            multi="True"
+            name="Imprimir Cheque(s) BHD Santiago - Cta 02392840012"
+            res_model="account.check.write.bhd.stgo.02392840012" src_model="account.voucher"
+            view_mode="form" target="new" view_type="form" />
+
+        <!-- ============================================================================================================== -->
+        <record id="view_account_check_write_bhd_stdo_02392840047" model="ir.ui.view">
+            <field name="name">account.check.write.bhd.stdo.02392840047</field>
+            <field name="model">account.check.write.bhd.stdo.02392840047</field>
+            <field name="arch" type="xml">
+                <form string="Imprimir Cheque(s) BHD Santo Domingo - Cta 02392840047">
+                    <group col="4">
+                        <field name="check_number"/>
+                    </group>
+                    <footer>
+                        <button name="print_check_write_bhd_stdo_02392840047" string="Imprimir Cheque(s) BHD Santo Domingo - Cta 02392840047" type="object" class="oe_highlight"/> or
+                        <button string="Cancel" class="oe_link" special="cancel"/>
+                    </footer>
+                </form>
+            </field>
+        </record>
+
+        <act_window id="action_account_check_write_bhd_stdo_02392840047"
+            multi="True"
+            name="Imprimir Cheque(s) BHD Santo Domingo - Cta 02392840047"
+            res_model="account.check.write.bhd.stdo.02392840047" src_model="account.voucher"
+            view_mode="form" target="new" view_type="form" />
+
+        <!-- ============================================================================================================== -->
+        <record id="view_account_check_write_br_ng_2500045417" model="ir.ui.view">
+            <field name="name">account.check.write.br.ng.2500045417</field>
+            <field name="model">account.check.write.br.ng.2500045417</field>
+            <field name="arch" type="xml">
+                <form string="Imprimir Cheque(s) Banco de Reservas Nagua - Cta 2500045417">
+                    <group col="4">
+                        <field name="check_number"/>
+                    </group>
+                    <footer>
+                        <button name="print_check_write_br_ng_2500045417" string="Imprimir Cheque(s) Banco de Reservas Nagua - Cta 2500045417" type="object" class="oe_highlight"/> or
+                        <button string="Cancel" class="oe_link" special="cancel"/>
+                    </footer>
+                </form>
+            </field>
+        </record>
+
+        <act_window id="action_account_check_write_br_ng_2500045417"
+            multi="True"
+            name="Imprimir Cheque(s) Banco de Reservas Nagua - Cta 2500045417"
+            res_model="account.check.write.br.ng.2500045417" src_model="account.voucher"
+            view_mode="form" target="new" view_type="form" />
+
+        <!-- ============================================================================================================== -->
+        <record id="view_account_check_write_bhd_leon_ec_2392840063" model="ir.ui.view">
+            <field name="name">account.check.write.bhd.leon.ec.2392840063</field>
+            <field name="model">account.check.write.bhd.leon.ec.2392840063</field>
+            <field name="arch" type="xml">
+                <form string="Imprimir Cheque(s) BHD Leon Economato - Cta 2392840063">
+                    <group col="4">
+                        <field name="check_number"/>
+                    </group>
+                    <footer>
+                        <button name="print_check_write_bhd_leon_ec_2392840063" string="Imprimir Cheque(s) BHD Leon Economato - Cta 2392840063" type="object" class="oe_highlight"/> or
+                        <button string="Cancel" class="oe_link" special="cancel"/>
+                    </footer>
+                </form>
+            </field>
+        </record>
+
+        <act_window id="action_account_check_write_bhd_leon_ec_2392840063"
+            multi="True"
+            name="Imprimir Cheque(s) BHD Leon Economato - Cta 2392840063"
+            res_model="account.check.write.bhd.leon.ec.2392840063" src_model="account.voucher"
+            view_mode="form" target="new" view_type="form" />
+
+        <!-- ============================================================================================================== -->
+        <record id="view_account_check_write_bhd_leon_ceg_stgo_17843860022" model="ir.ui.view">
+            <field name="name">account.check.write.bhd.leon.ceg.stgo.17843860022</field>
+            <field name="model">account.check.write.bhd.leon.ceg.stgo.17843860022</field>
+            <field name="arch" type="xml">
+                <form string="Imprimir Cheque(s) BHD Leon CEGES Santiago - Cta 17843860022">
+                    <group col="4">
+                        <field name="check_number"/>
+                    </group>
+                    <footer>
+                        <button name="print_check_write_bhd_leon_ceg_stgo_17843860022" string="Imprimir Cheque(s) BHD Leon CEGES Santiago - Cta 17843860022" type="object" class="oe_highlight"/> or
+                        <button string="Cancel" class="oe_link" special="cancel"/>
+                    </footer>
+                </form>
+            </field>
+        </record>
+
+        <act_window id="action_account_check_write_bhd_leon_ceg_stgo_17843860022"
+            multi="True"
+            name="Imprimir Cheque(s) BHD Leon CEGES Santiago - Cta 17843860022"
+            res_model="account.check.write.bhd.leon.ceg.stgo.17843860022" src_model="account.voucher"
+            view_mode="form" target="new" view_type="form" />
+
+        <!-- ============================================================================================================== -->
+         <record id="view_account_check_write_bhd_leon_ceg_stdo_17843860014" model="ir.ui.view">
+            <field name="name">account.check.write.bhd.leon.ceg.stdo.17843860014</field>
+            <field name="model">account.check.write.bhd.leon.ceg.stdo.17843860014</field>
+            <field name="arch" type="xml">
+                <form string="Imprimir Cheque(s) BHD Leon CEGES Santo Domingo - Cta 17843860014">
+                    <group col="4">
+                        <field name="check_number"/>
+                    </group>
+                    <footer>
+                        <button name="print_check_write_bhd_leon_ceg_stdo_17843860014" string="Imprimir Cheque(s) BHD Leon CEGES Santo Domingo - Cta 17843860014" type="object" class="oe_highlight"/> or
+                        <button string="Cancel" class="oe_link" special="cancel"/>
+                    </footer>
+                </form>
+            </field>
+        </record>
+
+        <act_window id="action_account_check_write_bhd_leon_ceg_stdo_17843860014"
+            multi="True"
+            name="Imprimir Cheque(s) BHD Leon CEGES Santo Domingo - Cta 17843860014"
+            res_model="account.check.write.bhd.leon.ceg.stdo.17843860014" src_model="account.voucher"
+            view_mode="form" target="new" view_type="form" />
+
+        <!-- ============================================================================================================== -->
+        <record id="view_account_check_write_bhd_us_2392840055" model="ir.ui.view">
+            <field name="name">account.check.write.bhd.us.2392840055</field>
+            <field name="model">account.check.write.bhd.us.2392840055</field>
+            <field name="arch" type="xml">
+                <form string="Imprimir Cheque(s) BHD - Leon US$ - Cta 2392840055">
+                    <group col="4">
+                        <field name="check_number"/>
+                    </group>
+                    <footer>
+                        <button name="print_check_write_bhd_us_2392840055" string="Imprimir Cheque(s) BHD - Leon US$ - Cta 2392840055" type="object" class="oe_highlight"/> or
+                        <button string="Cancel" class="oe_link" special="cancel"/>
+                    </footer>
+                </form>
+            </field>
+        </record>
+
+        <act_window id="action_account_check_write_bhd_us_2392840055"
+            multi="True"
+            name="Imprimir Cheque(s) BHD - Leon US$ - Cta 2392840055"
+            res_model="account.check.write.bhd.us.2392840055" src_model="account.voucher"
+            view_mode="form" target="new" view_type="form" />
+
+        <!-- ============================================================================================================== -->
+        <record id="view_account_check_write_bhd_fupuapa_13823040015" model="ir.ui.view">
+            <field name="name">account.check.write.bhd.fupuapa.13823040015</field>
+            <field name="model">account.check.write.bhd.fupuapa.13823040015</field>
+            <field name="arch" type="xml">
+                <form string="Imprimir Cheque(s) BHD - Leon FUPUAPA - Cta 13823040015">
+                    <group col="4">
+                        <field name="check_number"/>
+                    </group>
+                    <footer>
+                        <button name="print_check_write_bhd_fupuapa_13823040015" string="Imprimir Cheque(s) BHD - Leon FUPUAPA - Cta 13823040015" type="object" class="oe_highlight"/> or
+                        <button string="Cancel" class="oe_link" special="cancel"/>
+                    </footer>
+                </form>
+            </field>
+        </record>
+
+        <act_window id="action_account_check_write_bhd_fupuapa_13823040015"
+            multi="True"
+            name="Imprimir Cheque(s) BHD - Leon FUPUAPA - Cta 13823040015"
+            res_model="account.check.write.bhd.fupuapa.13823040015" src_model="account.voucher"
+            view_mode="form" target="new" view_type="form" />
+
+        <!-- ============================================================================================================== -->
+        <record id="view_account_check_write_bpd_inc_790162606" model="ir.ui.view">
+            <field name="name">account.check.write.bpd.inc.790162606</field>
+            <field name="model">account.check.write.bpd.inc.790162606</field>
+            <field name="arch" type="xml">
+                <form string="Imprimir Cheque(s) Banco Popular - Incapre - Cta 790162606">
+                    <group col="4">
+                        <field name="check_number"/>
+                    </group>
+                    <footer>
+                        <button name="print_check_write_bpd_inc_790162606" string="Imprimir Cheque(s) Banco Popular - Incapre - Cta 790162606" type="object" class="oe_highlight"/> or
+                        <button string="Cancel" class="oe_link" special="cancel"/>
+                    </footer>
+                </form>
+            </field>
+        </record>
+
+        <act_window id="action_account_check_write_bpd_inc_790162606"
+            multi="True"
+            name="Imprimir Cheque(s) Banco Popular - Incapre - Cta 790162606"
+            res_model="account.check.write.bpd.inc.790162606" src_model="account.voucher"
+            view_mode="form" target="new" view_type="form" />
+
+        <!-- ============================================================================================================== -->
+        <record id="view_account_check_write_bpd_uapa_790162770" model="ir.ui.view">
+            <field name="name">account.check.write.bpd.uapa.790162770</field>
+            <field name="model">account.check.write.bpd.uapa.790162770</field>
+            <field name="arch" type="xml">
+                <form string="Imprimir Cheque(s) Banco Popular - UAPA - Cta 790162770">
+                    <group col="4">
+                        <field name="check_number"/>
+                    </group>
+                    <footer>
+                        <button name="print_check_write_bpd_uapa_790162770" string="Imprimir Cheque(s) Banco Popular - UAPA - Cta 790162770" type="object" class="oe_highlight"/> or
+                        <button string="Cancel" class="oe_link" special="cancel"/>
+                    </footer>
+                </form>
+            </field>
+        </record>
+
+        <act_window id="action_account_check_write_bpd_uapa_790162770"
+            multi="True"
+            name="Imprimir Cheque(s) Banco Popular - UAPA - Cta 790162770"
+            res_model="account.check.write.bpd.uapa.790162770" src_model="account.voucher"
+            view_mode="form" target="new" view_type="form" />
+    </data>
+</openerp>

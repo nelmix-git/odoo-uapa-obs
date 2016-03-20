@@ -1,0 +1,35 @@
+<?xml version="1.0" encoding="utf-8"?>
+<openerp>
+<data>
+
+	<!--menuitem name="Expenses" parent="base.menu_event_main" action="hr_expense.expense_all" id="menu_events_expenses" /-->
+
+	<record model="ir.ui.view" id="event_view_form_inherit">
+		<field name="name">event.view.form.inherit</field>
+		<field name="model">event.event</field>
+		<field name="inherit_id" ref="event.view_event_form"/>
+		<field name="arch" type="xml">
+			<xpath expr="//field[@name='type']" position="after">
+				<field name="is_training"/>
+			</xpath>
+			<xpath expr="//page[@string='Registrations']" position="after">
+				<page name="page_event_expenses" string="Expenses">
+					<field name="expenses_ids"/>
+				</page>
+			</xpath>
+		</field>
+	</record>
+	
+	<record model="ir.ui.view" id="event_view_registration_form_inherit">
+		<field name="name">event.view.registration.form.inherit</field>
+		<field name="model">event.registration</field>
+		<field name="inherit_id" ref="event.view_event_registration_form" />
+		<field name="arch" type="xml">
+			<xpath  expr="//field[@name='partner_id']" position="after">
+				<field name="employee_id" on_change="onchange_employee_id(employee_id, context)"/>
+			</xpath>
+		</field>
+	</record>
+	
+</data>
+</openerp>

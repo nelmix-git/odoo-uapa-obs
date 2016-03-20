@@ -1,0 +1,117 @@
+<?xml version="1.0" encoding="utf-8"?>
+<openerp>
+    <data noupdate="1">
+<!-- Account asset sequence -->
+    <record model="ir.sequence.type" id="asset_sequence_code">
+        <field name="name">Asset sequence code</field>
+        <field name="code">asset.number</field>
+    </record>
+
+    <!-- Codes for each one of the 16 companies -->
+    <record id="seq_asset_code_by_company_1" model="ir.sequence">
+            <field name="name">Code Universidad Abierta Para Adultos (UAPA)</field>
+            <field name="code">asset.number</field>
+            <field name="prefix"> </field>
+            <field name="padding">5</field>
+            <field name="company_id">1</field>
+        </record>
+<record id="seq_asset_code_by_company_3" model="ir.sequence">
+            <field name="name">Code UAPA - Sede Santo Domingo</field>
+            <field name="code">asset.number</field>
+            <field name="prefix"> </field>
+            <field name="padding">5</field>
+            <field name="company_id">3</field>
+        </record>
+<record id="seq_asset_code_by_company_4" model="ir.sequence">
+            <field name="name">Code UAPA - Sede Nagua</field>
+            <field name="code">asset.number</field>
+            <field name="prefix"> </field>
+            <field name="padding">5</field>
+            <field name="company_id">4</field>
+        </record>
+<record id="seq_asset_code_by_company_5" model="ir.sequence">
+            <field name="name">Code INCAPRE STGO.</field>
+            <field name="code">asset.number</field>
+            <field name="prefix"> </field>
+            <field name="padding">5</field>
+            <field name="company_id">5</field>
+        </record>
+<record id="seq_asset_code_by_company_6" model="ir.sequence">
+            <field name="name">Code INCAPRE STO. DGO.</field>
+            <field name="code">asset.number</field>
+            <field name="prefix"> </field>
+            <field name="padding">5</field>
+            <field name="company_id">6</field>
+        </record>
+<record id="seq_asset_code_by_company_7" model="ir.sequence">
+            <field name="name">Code INCAPRE NAGUA</field>
+            <field name="code">asset.number</field>
+            <field name="prefix"> </field>
+            <field name="padding">5</field>
+            <field name="company_id">7</field>
+        </record>
+<record id="seq_asset_code_by_company_8" model="ir.sequence">
+            <field name="name">Code ECONOMATO STGO.</field>
+            <field name="code">asset.number</field>
+            <field name="prefix"> </field>
+            <field name="padding">5</field>
+            <field name="company_id">8</field>
+        </record>
+<record id="seq_asset_code_by_company_9" model="ir.sequence">
+            <field name="name">Code ECONOMATO STO. DGO.</field>
+            <field name="code">asset.number</field>
+            <field name="prefix"> </field>
+            <field name="padding">5</field>
+            <field name="company_id">9</field>
+        </record>
+<record id="seq_asset_code_by_company_10" model="ir.sequence">
+            <field name="name">Code ECONOMATO NAGUA</field>
+            <field name="code">asset.number</field>
+            <field name="prefix"> </field>
+            <field name="padding">5</field>
+            <field name="company_id">10</field>
+        </record>
+<record id="seq_asset_code_by_company_11" model="ir.sequence">
+            <field name="name">Code CEGES STGO.</field>
+            <field name="code">asset.number</field>
+            <field name="prefix"> </field>
+            <field name="padding">5</field>
+            <field name="company_id">11</field>
+        </record>
+<record id="seq_asset_code_by_company_12" model="ir.sequence">
+            <field name="name">Code CEGES STO. DGO.</field>
+            <field name="code">asset.number</field>
+            <field name="prefix"> </field>
+            <field name="padding">5</field>
+            <field name="company_id">12</field>
+        </record>
+<record id="seq_asset_code_by_company_13" model="ir.sequence">
+            <field name="name">Code ECONOMATOS</field>
+            <field name="code">asset.number</field>
+            <field name="prefix"> </field>
+            <field name="padding">5</field>
+            <field name="company_id">13</field>
+        </record>
+<record id="seq_asset_code_by_company_14" model="ir.sequence">
+            <field name="name">Code CEGES</field>
+            <field name="code">asset.number</field>
+            <field name="prefix"> </field>
+            <field name="padding">5</field>
+            <field name="company_id">14</field>
+        </record>
+<record id="seq_asset_code_by_company_15" model="ir.sequence">
+            <field name="name">Code INCAPRE</field>
+            <field name="code">asset.number</field>
+            <field name="prefix"> </field>
+            <field name="padding">5</field>
+            <field name="company_id">15</field>
+        </record>
+<record id="seq_asset_code_by_company_16" model="ir.sequence">
+            <field name="name">Code UAPA - Sede Santiago</field>
+            <field name="code">asset.number</field>
+            <field name="prefix"> </field>
+            <field name="padding">5</field>
+            <field name="company_id">16</field>
+        </record>
+    </data>
+</openerp>

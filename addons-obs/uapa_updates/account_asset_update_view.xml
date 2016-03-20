@@ -1,0 +1,215 @@
+<?xml version="1.0" encoding="utf-8"?>
+<openerp>
+	<data>
+		<record model="ir.ui.view" id="account_asset_view_form">
+			<field name="name">account.asset.view.form</field>
+			<field name="model">account.asset.asset</field>
+			<field name="inherit_id" ref="account_asset.view_account_asset_asset_form"/>
+			<field name="arch" type="xml">
+				<xpath expr="//field[@name='company_id']" position="after">
+					<field name="department_id" attrs="{'readonly':[('state','!=','draft')]}"/>
+				</xpath>
+				<xpath  expr="//field[@name='category_id']" position="after">
+					<field name="life_expectancy_percentage" widget="progressbar" attrs="{'readonly':[('state','!=','draft')]}"/>
+					<field name="category" attrs="{'readonly':[('state','!=','draft')]}"/>
+				</xpath>
+			<xpath expr="//field[@name='value_residual']" position="after">
+				<field name="life_expectancy" attrs="{'readonly':[('state','!=','draft')]}" on_change="get_depreciation_number(purchase_value, life_expectancy, method_period)"/>
+			</xpath>
+			<xpath expr="//field[@name='state']" position="after">
+				<field name="stage_id" widget="statusbar" clickable="True" attrs="{'readonly':[('state','!=','draft')]}"/>
+			</xpath>
+			<xpath expr="//field[@name='category_id']" position="after">
+				<field name="model_id" attrs="{'readonly':[('state','!=','draft')]}"/>
+				<field name="brand_id" attrs="{'readonly':[('state','!=','draft')]}"/>
+			</xpath>
+			<xpath expr="//page[@string='Notes']" position="before">
+				<page string="Movements">
+					<field name="asset_move_ids"/>
+				</page>
+			</xpath>
+			<xpath expr="//field[@name='method_period']" position="replace">
+				<field name="method_period" attrs="{'readonly':[('state','!=','draft')]}" on_change="get_depreciation_number(purchase_value, life_expectancy, method_period)"/>
+			</xpath>
+		</field>
+	</record>
+
+	<!-- Tree view for account.asset.asset -->
+	<record model="ir.ui.view" id="account_asset_asset_tree_inherit">
+		<field name="name">account.asset.asset.tree.inherit</field>
+		<field name="model">account.asset.asset</field>
+		<field name="inherit_id" ref="account_asset.view_account_asset_asset_tree"/>
+		<field name="arch" type="xml">
+			<xpath expr="//field[@name='name']" position="before">
+				<field name="code" string="Code" />
+			</xpath>
+		</field>
+	</record>
+
+	<record model="ir.ui.view" id="account_asset_view_field_code">
+		<field name="name">account.asset.view.field.code</field>
+		<field name="model">account.asset.category</field>
+		<field name="inherit_id" ref="account_asset.view_account_asset_category_form"/>
+		<field name="arch" type="xml">
+			<xpath expr="//field[@name='name']" position="before">
+				<label for="Codigo"/>
+				<group colspan="2" col="4">
+					<field name="code"/>
+				</group>
+			</xpath>
+		</field>
+	</record>
+
+	<record model="ir.ui.view" id="res_company_view_field_code">
+		<field name="">res.company.view.code</field>
+		<field name="model">res.company</field>
+		<field name="inherit_id" ref="base.view_company_form"/>
+		<field name="arch" type="xml">
+			<xpath expr="//field[@name='partner_id']" position="after">
+				<field name="code"/>
+			</xpath>
+		</field>
+	</record>
+
+	<!-- Tree view for account.asset.brand-->
+	<record model="ir.ui.view" id="account_asset_brand_view">
+		<field name="name">account.asset.brand.view</field>
+		<field name="model">account.asset.brand</field>
+		<field name="arch" type="xml">
+			<tree string="Asset brands" version="7.0" editable="top">
+				<field name="name"/>
+			</tree>
+		</field>
+	</record>
+
+	<!-- Action for account.asset.brand view -->
+	<record model="ir.actions.act_window" id="action_account_asset_brand">
+		<field name="name">Asset brand view action</field>
+		<field name="res_model">account.asset.brand</field>
+		<field name="view_type">form</field>
+		<field name="view_mode">tree</field>
+	</record>
+
+	<!-- Menu for asset brand -->
+	<menuitem name="Asset brands" id="menu_asset_brands" parent="account_asset.menu_finance_config_assets" sequence="30" action="action_account_asset_brand"/>
+
+	<!-- Tree view for account.asset.model -->
+	<record model="ir.ui.view" id="account_asset_model_view">
+		<field name="name">account.asset.model.view</field>
+		<field name="model">account.asset.model</field>
+		<field name="arch" type="xml">
+			<tree string="Asset model" version="7.0" editable="top">
+				<field name="name"/>
+				<field name="brand_id"/>
+			</tree>
+		</field>
+	</record>
+
+	<!-- Action for account.asset.model view -->
+	<record model="ir.actions.act_window" id="action_account_asset_model">
+		<field name="name">Asset model view action</field>
+		<field name="res_model">account.asset.model</field>
+		<field name="view_type">form</field>
+		<field name="view_mode">tree</field>
+	</record>
+
+	<!-- Menu for asset model -->
+	<menuitem name="Asset models" id="menu_asset_models" parent="account_asset.menu_finance_config_assets" sequence="40" action="action_account_asset_model"/>
+
+	<!-- Form and tree for account.asset.stage -->
+	<record model="ir.ui.view" id="asset_stage_form_view">
+		<field name="name">asset.stage.form.view</field>
+		<field name="model">account.asset.stage</field>
+		<field name="arch" type="xml">
+			<form string="Asset stages" version="7.0">
+				<sheet>
+					<label for="name"/>
+					<field name="name"/>
+					<separator/>
+					<label for="description"/>
+					<field name="description"/>
+				</sheet>
+			</form>
+		</field>
+	</record>
+
+	<record model="ir.ui.view" id="asset_stage_tree_view">
+		<field name="name">asset.stage.tree.view</field>
+		<field name="model">account.asset.stage</field>
+		<field name="arch" type="xml">
+			<tree string="Asset stages" version="7.0" editable="top">
+				<field name="name"/>
+				<field name="description"/>
+			</tree>
+		</field>
+	</record>
+
+	<!-- Action for asset stages form and tree -->
+	<record model="ir.actions.act_window" id="action_asset_stages">
+		<field name="name">Asset stages action</field>
+		<field name="res_model">account.asset.stage</field>
+		<field name="view_type">form</field>
+	</record>
+
+	<!-- Menu for asset stages -->
+	<menuitem name="Asset stages" id="menu_asset_stages" parent="account_asset.menu_finance_config_assets" action="action_asset_stages" sequence="50"/>
+
+	<!-- Kanban view for account.asset.asset -->
+	<record model="ir.ui.view" id="account_asset_kanban_view">
+		<field name="name">account.asset.kanban.view</field>
+		<field name="model">account.asset.asset</field>
+		<field name="arch" type="xml">
+			<kanban default_group_by="stage_id">
+				<templates>
+					<t t-name="kanban-box">
+						<div t-attf-class="oe_kanban_card">
+							<div class="oe_resource_details">
+								<ul>
+									<li><field name="name"/></li>
+									<li><field name="code"/></li>
+									<li><field name="purchase_value"/></li>
+									<li><field name="purchase_date"/></li>
+								</ul>
+							</div>
+						</div>
+					</t>
+				</templates>
+			</kanban>
+		</field>
+	</record>
+
+	<!-- Action for kanban view -->
+	<record model="ir.actions.act_window" id="account_asset_overload_view">
+		<field name="name">Account Asset View</field>
+		<field name="res_model">account.asset.asset</field>
+		<field name="view_type">form</field>
+		<field name="view_mode">kanban,tree,form</field>
+		<field name="view_id" ref="account_asset_kanban_view"/>
+	</record>
+
+	<!-- Planified action for asset create entry -->
+	<record model="ir.cron" id="account_asset_create_entry">
+		<field name="name">Run asset entry job</field>
+		<field name="active" eval="True"/>
+		<field name="interval_number">1</field>
+		<field name="interval_type">weeks</field>
+		<field name="numbercall">-1</field>
+		<field name="model">account.asset.asset</field>
+		<field name="function">run_asset_entry</field>
+		<field name="args">()</field>
+	</record>
+
+	<!-- Search by asset code -->
+	<record model="ir.ui.view" id="account_asset_search_inherit">
+		<field name="name">account.asset.search.inherit</field>
+		<field name="model">account.asset.asset</field>
+		<field name="inherit_id" ref="account_asset.view_account_asset_search"/>
+		<field name="arch" type="xml">
+			<xpath expr="//field[@name='partner_id']" position="after">
+				<field name="code"/>
+			</xpath>
+		</field>
+	</record>
+
+	</data>
+</openerp>

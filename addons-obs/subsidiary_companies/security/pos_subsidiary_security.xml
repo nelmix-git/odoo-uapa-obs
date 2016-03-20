@@ -1,0 +1,84 @@
+<?xml version="1.0" encoding="utf-8"?>
+	<openerp>
+	
+		<data noupdate="0">
+
+            <!-- Pos order groups & rules -->
+            <record id="pos_order_all" model="res.groups">
+            <field name="name">Pos Order multi-subisidiary / Todas</field>
+            <field name="category_id" ref=""/>
+                <!--field name="implied_ids" eval="[(4, ref('base.group_user'))]"/-->
+            </record>
+
+            <record id="pos_order_sub_rule" model="ir.rule">
+				<field name="name">Pos Order multi-subsidiary</field>
+				<field name="model_id" ref="model_pos_order"/>
+				<field name="global" eval="True"/>
+				<field name="domain_force">['|',('subsidiary_id','=',False),
+                    ('subsidiary_id','child_of',[user.subsidiary_id.id]),
+                    ('subsidiary_id','=',[user.subsidiary_id.id])]</field>
+			</record>
+
+            <record id="pos_order_sub_rule_all" model="ir.rule">
+				<field name="name">Pos Order multi-subsidiary all</field>
+				<field name="model_id" ref="model_pos_order"/>
+				<field name="global" eval="True"/>
+				<field name="domain_force">[(1,'=',1)]</field>
+                <field name="groups" eval="[(4,ref('pos_order_all'))]"/>
+			</record>
+            <!-- Pos order groups & rules -->
+
+
+            <!-- Pos session groups & rules -->
+            <record id="pos_session_all" model="res.groups">
+            <field name="name">Pos Session multi-subisidiary / Todas</field>
+            <field name="category_id" ref=""/>
+                <!--field name="implied_ids" eval="[(4, ref('base.group_user'))]"/-->
+            </record>
+
+            <record id="pos_session_sub_rule" model="ir.rule">
+				<field name="name">Pos Session multi-subsidiary</field>
+				<field name="model_id" ref="model_pos_session"/>
+				<field name="global" eval="True"/>
+				<field name="domain_force">['|',('subsidiary_id','=',False),
+                    ('subsidiary_id','child_of',[user.subsidiary_id.id]),
+                    ('subsidiary_id','=',[user.subsidiary_id.id])]</field>
+			</record>
+
+            <record id="pos_session_sub_rule_all" model="ir.rule">
+				<field name="name">Pos Session multi-subsidiary all</field>
+				<field name="model_id" ref="model_pos_session"/>
+				<field name="global" eval="True"/>
+				<field name="domain_force">[(1,'=',1)]</field>
+                <field name="groups" eval="[(4,ref('pos_session_all'))]"/>
+			</record>
+            <!-- Pos session groups & rules -->
+
+            <!-- Pos config groups & rules -->
+            <record id="pos_config_all" model="res.groups">
+            <field name="name">Pos Config multi-subisidiary / Todas</field>
+            <field name="category_id" ref=""/>
+                <!--field name="implied_ids" eval="[(4, ref('base.group_user'))]"/-->
+            </record>
+
+            <record id="pos_config_sub_rule" model="ir.rule">
+				<field name="name">Pos Config multi-subsidiary</field>
+				<field name="model_id" ref="model_pos_config"/>
+				<field name="global" eval="True"/>
+				<field name="domain_force">['|',('subsidiary_id','=',False),
+                    ('subsidiary_id','child_of',[user.subsidiary_id.id]),
+                    ('subsidiary_id','=',[user.subsidiary_id.id])]</field>
+			</record>
+
+            <record id="pos_config_sub_rule_all" model="ir.rule">
+				<field name="name">Pos Config multi-subsidiary all</field>
+				<field name="model_id" ref="model_pos_config"/>
+				<field name="global" eval="True"/>
+				<field name="domain_force">[(1,'=',1)]</field>
+                <field name="groups" eval="[(4,ref('pos_config_all'))]"/>
+			</record>
+
+		</data>
+	
+	</openerp>
+

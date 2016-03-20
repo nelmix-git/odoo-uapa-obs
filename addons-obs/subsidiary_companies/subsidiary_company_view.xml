@@ -1,0 +1,206 @@
+<?xml version="1.0" encoding="utf-8"?>
+<openerp>
+    <data>
+
+    <!--Form view for res.company.subsidiary; copied from res.company-->
+    <record id="res_company_subsidiary_form" model="ir.ui.view">
+            <field name="name">res.company.subsidiary.form</field>
+            <field name="model">res.company.subsidiary</field>
+            <field name="arch" type="xml">
+                <form string="Subsidiary" version="7.0">
+                  <sheet>
+                    <div>
+                        <field name="logo" widget="image"  class="oe_avatar oe_left"/>
+                    </div>
+                    <div class="oe_title">
+                        <label for="name" class="oe_edit_only"/>
+                        <h1>
+                            <field name="name" class="oe_inline"/>
+                        </h1>
+                    </div>
+                    <div attrs="{'invisible' : [('logo','!=',False)]}" class="oe_view_nocontent oe_clear">
+                        <p class="oe_view_nocontent_create">
+                            Click to set your company logo.
+                        </p>
+                    </div>
+                    <group col="4">
+                        <field name="parent_id"  groups="base.group_multi_company"/>
+                    </group>
+                    <notebook colspan="4">
+                        <page string="General Information">
+                            <group>
+                                <group>
+                                    <field name="partner_id" readonly="1" required="0" groups="base.group_no_one"/>
+                                    <label for="street" string="Address"/>
+                                    <div>
+                                        <field name="street" placeholder="Street..."/>
+                                        <field name="street2"/>
+                                        <div>
+                                            <field name="city" placeholder="City" style="width: 40%%"/>
+                                            <field name="state_id" class="oe_no_button" placeholder="State" style="width: 24%%" options='{"no_open": True}'/>
+                                            <field name="zip" placeholder="ZIP" style="width: 34%%"/>
+                                        </div>
+                                        <field name="country_id" placeholder="Country" class="oe_no_button" options='{"no_open": True}' on_change="on_change_country(country_id)"/>
+                                    </div>
+                                    <label for="rml_header1"/>
+                                    <div>
+                                        <field name="rml_header1" placeholder="e.g. Global Business Solutions"/>
+                                    </div>
+                                    <field name="website" widget="url" placeholder="e.g. www.openerp.com"
+                                        on_change="onchange_footer(custom_footer, phone, fax, email, website, vat, company_registry, bank_ids)"/>
+                                </group>
+                                <group>
+                                    <field name="phone" on_change="onchange_footer(custom_footer, phone, fax, email, website, vat, company_registry, bank_ids)"/>
+                                    <field name="fax" on_change="onchange_footer(custom_footer, phone, fax, email, website, vat, company_registry, bank_ids)"/>
+                                    <field name="email" on_change="onchange_footer(custom_footer, phone, fax, email, website, vat, company_registry, bank_ids)"/>
+                                    <field name="vat" on_change="onchange_footer(custom_footer, phone, fax, email, website, vat, company_registry, bank_ids)"/>
+                                    <field name="company_registry" on_change="onchange_footer(custom_footer, phone, fax, email, website, vat, company_registry, bank_ids)"/>
+                                </group>
+                            </group>
+                            <group string="Bank Accounts">
+                                <field name="bank_ids" nolabel="1" context="{'default_company_id': active_id, 'footer_hide': False}"
+                                    on_change="onchange_footer(custom_footer, phone, fax, email, website, vat, company_registry, bank_ids)"/>
+                            </group>
+                        </page>
+                        <page string="Configuration">
+                            <group>
+                                <group name="account_grp" string="Accounting">
+                                    <field name="currency_id"/>
+                                </group>
+                            </group>
+                        </page>
+                    </notebook>
+                    </sheet>
+                </form>
+            </field>
+        </record>
+
+       <!-- Search capabilities by subsidiary_id to the employee -->
+        <record model="ir.ui.view" id="employee_search_by_subsidiary">
+            <field name="name">Employee search by subsidiary</field>
+            <field name="model">hr.employee</field>
+            <field name="inherit_id" ref="hr.view_employee_filter"/>
+            <field name="arch" type="xml">
+                <field name="name" position="after">
+                    <field name="subsidiary_id" string="Subsidiaria"/>
+                </field>
+            </field>
+        </record>
+
+     <!-- Tree view for res.company.subsidiary; copied from res.company -->
+     <record model="ir.ui.view" id="res_company_subsidiary_tree">
+        <field name="name">res.company.subsidiary.tree</field>
+        <field name="model">res.company.subsidiary</field>
+        <field name="arch" type="xml">
+            <tree string="Subsidiary Companies">
+                <field name="name"/>
+                <field name="partner_id"/>
+            </tree>
+        </field>
+     </record>
+     
+      <record id="hr_employee_form_subsidiary" model="ir.ui.view">
+            <field name="name">hr.employee.form.subsidiary</field>
+            <field name="model">hr.employee</field>
+            <field name="inherit_id" ref="hr.view_employee_form"/>
+            <field name="arch" type="xml">
+                <xpath expr="/form/sheet/div/label" position="after">
+                    <h4>
+                        <label for="subsidiary_id" class="oe_edit_only"/>
+                        <field name="subsidiary_id" placeholder="Elija una subsidiaria..." readonly="0"/>
+                    </h4>
+                </xpath>
+            </field>
+        </record>
+     
+        <record model="ir.ui.view" id="account_journal_subsidiary_form_inherit">
+            <field name="name">account.journal.subsidiary.form.inherit</field>
+            <field name="model">account.journal</field>
+            <field name="inherit_id" ref="account.view_account_journal_form"/>
+            <field name="arch" type="xml">
+                <xpath expr="//field[@name='default_credit_account_id']" position="after">
+                    <field name="subsidiary_id" />
+                </xpath>
+            </field>
+        </record>
+        
+        <record model="ir.ui.view" id="hr_payslip_run_subsidiary_form_inherit">
+            <field name="name">hr.payslip.run.subsidiary.form.inherit</field>
+            <field name="model">hr.payslip.run</field>
+            <field name="inherit_id" ref="hr_payroll.hr_payslip_run_form"/>
+            <field name="arch" type="xml">
+                <xpath expr="//field[@name='company_id']" position="after">
+                    <field name="subsidiary_id" />
+                </xpath>
+            </field>
+        </record>
+     
+     <!-- Action for res.company.subsidiary -->
+     <record model="ir.actions.act_window" id="res_company_subsidiary_action">
+        <field name="name">Subsidiary Companies</field>
+        <field name="res_model">res.company.subsidiary</field>
+        <field name="view_type">form</field>
+        <field name="view_mode">tree,form</field>
+        </record>
+
+        <!-- Inherit Form View to Modify it -->
+        <record id="pos_session_subsidiary" model="ir.ui.view">
+            <field name="name">pos.session.subsidiary</field>
+            <field name="model">pos.session</field>
+            <field name="inherit_id" ref="point_of_sale.view_pos_session_form"/>
+            <field name="arch" type="xml">
+
+                <xpath expr="//field[@name='stop_at']" position="after">
+                    <field name="subsidiary_id"/>
+                </xpath>
+
+            </field>
+        </record>
+
+        <!-- Inherit Form View to Modify it -->
+        <record id="pos_order_subsidiary" model="ir.ui.view">
+            <field name="name">pos.order.subsidiary</field>
+            <field name="model">pos.order</field>
+            <field name="inherit_id" ref="point_of_sale.view_pos_pos_form"/>
+            <field name="arch" type="xml">
+
+                <xpath expr="//field[@name='partner_id']" position="after">
+                    <field name="subsidiary_id"/>
+                </xpath>
+
+            </field>
+        </record>
+
+        <!-- Inherit Form View to Modify it -->
+        <record id="pos_config_subsidiary" model="ir.ui.view">
+            <field name="name">pos.config.subsidiary</field>
+            <field name="model">pos.config</field>
+            <field name="inherit_id" ref="point_of_sale.view_pos_config_form"/>
+            <field name="arch" type="xml">
+
+                <xpath expr="//field[@name='company_id']" position="after">
+                    <field name="subsidiary_id"/>
+                </xpath>
+
+            </field>
+        </record>
+
+        <!-- Inherit Form View to Modify it -->
+        <!--record id="pos_session_opening_attr" model="ir.ui.view">
+            <field name="name">pos.session.opening</field>
+            <field name="model">pos.session.opening</field>
+            <field name="inherit_id" ref="marcos_pos.marcos_pos_session_opening_form_view"/>
+            <field name="arch" type="xml">
+                <xpath expr="//field[@name='pos_config_id']" position="attributes">
+                    <attribute name="domain">[('state','=','active'),('subsidiary_id','=',[user.subsidiary_id.id])]</attribute>
+                </xpath>
+            </field>
+        </record-->
+
+        <!-- Menu items for res.company.subsidiary-->
+        <menuitem name="Subsidiaries" parent="base.menu_administration" sequence="3" id="subsidairy_top_menu"/>
+        <menuitem name="Subsidairies" parent="subsidairy_top_menu" action="res_company_subsidiary_action" sequence="3" id="subsidiary_main_menu"/>
+
+    </data>
+</openerp>
+

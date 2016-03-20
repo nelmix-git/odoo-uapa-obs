@@ -1,0 +1,37 @@
+<?xml version="1.0" encoding="utf-8"?>
+<openerp>
+<data>
+
+    <!-- Inherit Form View to Modify it -->
+    <record id="view_account_treasury_report_extend_tree" model="ir.ui.view">
+        <field name="name">account.treasury.report.extend.tree</field>
+        <field name="model">account.treasury.report</field>
+        <field name="inherit_id" ref="account.view_account_treasury_report_tree"/>
+        <field name="arch" type="xml">
+
+            <xpath expr="//field[@name='fiscalyear_id']" position="after">
+                <!-- Add your fields or attributes here -->
+                <field name="account_id"/>
+            </xpath>
+
+        </field>
+    </record>
+
+    <!-- Inherit Form View to Modify it -->
+    <record id="view_account_treasury_report_extend_graph" model="ir.ui.view">
+        <field name="name">account.treasury.report.extend.graph</field>
+        <field name="model">account.treasury.report</field>
+        <field name="inherit_id" ref="account.view_account_treasury_report_graph"/>
+        <field name="arch" type="xml">
+
+            <xpath expr="//field[@name='period_id']" position="after">
+                <!-- Add your fields or attributes here -->
+                <field name="account_id" type="row"/>
+            </xpath>
+
+        </field>
+    </record>
+
+
+</data>
+</openerp>

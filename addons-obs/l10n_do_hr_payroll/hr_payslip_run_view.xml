@@ -1,0 +1,37 @@
+<?xml version="1.0" ?>
+<openerp>
+    <data>
+        <record id="view_hr_payslip_run_number" model="ir.ui.view">
+            <field name="name">hr.payslip.run.form.name</field>
+            <field name="model">hr.payslip.run</field>
+            <field name="inherit_id" ref="hr_payroll.hr_payslip_run_form"></field>
+            <field name="arch" type="xml">
+                <form string="Payslips Batches" position="inside">
+                    <separator colspan="4" string="Header" position="inside"/>
+                </form>
+                <field name="credit_note" position="before">
+                    <field name="company_id" />
+                    <field name="date_efective" />
+                    <field name="currency_id" />
+                    <field name="bank_id" />
+                </field>
+                                <button string = "Generate Payslips" position = "after"> 
+                    <button name="close_payslip_run" type="object" states="draft" icon="STOCK_GOTO_BOTTOM" string="Confirmar Nominas" />
+                    </button>
+            </field>
+        </record>
+
+        <record model="ir.ui.view" id="hr_payslip_inherit_search">
+            <field name="name">hr.payslip.inherit.search</field>
+            <field name="model">hr.payslip.run</field>
+            <field name="inherit_id" ref="hr_payroll.hr_payslip_run_filter"/>
+            <field name="arch" type="xml">
+                <field name="name" position="after">
+                    <field name="bank_id" string="Bank"/>
+                    <field name="company_id" string="Company"/>
+                </field>
+            </field>
+        </record>
+
+    </data>
+</openerp>

@@ -1,0 +1,24 @@
+<?xml version="1.0" ?>
+<openerp>
+    <data>
+		<record id="supplier_invoice_fiscal_clasification" model="ir.ui.view">
+			<field name="name">account.invoice.form.fiscal.clasification</field>
+			<field name="model">account.invoice</field>
+			<field name="inherit_id" ref="account.invoice_supplier_form"/>
+				<field name="arch" type="xml">
+					<!--xpath expr="//field[@name='journal_id']" position="after">
+						<field name="fiscal_clasification"/>
+					</xpath-->
+					<!--xpath expr="//field[@name='reference']" position="replace">
+						<field name="reference" class="oe_inline" string="NCF Proveedor"/>
+					</xpath-->
+					<xpath expr="//field[@name='date_due']" position="replace">
+						<field name="date_due" class="oe_inline" required="1"/>
+					</xpath>
+					<xpath expr="//field[@name='payment_term']" position="replace">
+						<field name="payment_term" class="oe_inline" required="1"/>
+					</xpath>
+				</field>
+		</record>
+	</data>
+</openerp>

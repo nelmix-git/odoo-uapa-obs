@@ -1,0 +1,32 @@
+<?xml version="1.0" encoding="utf-8"?>
+<openerp>
+    <data>
+
+        <record model="ir.ui.view" id="res_users_form_inherit">
+            <field name="name">res.users.form.inherit</field>
+            <field name="model">res.users</field>
+            <field name="inherit_id" ref="base.view_users_form"/>
+            <field name="arch" type="xml">
+                <xpath expr="//field[@name='company_id']" position="after">
+                    <field name="subsidiary_id"/>
+                </xpath>
+                <xpath expr="//field[@name='company_ids']" position="after">
+                    <field name="subsidiary_ids" nolabel="1" widget="many2many_tags"/>
+                </xpath>
+            </field>
+        </record>
+
+        <record model="ir.ui.view" id="res_users_simple_form_inherit">
+            <field name="name">res.users.simple.form.inherit</field>
+            <field name="model">res.users</field>
+            <field name="inherit_id" ref="base.view_users_form_simple_modif"/>
+            <field name="arch" type="xml">
+                <xpath expr="//field[@name='company_id']" position="after">
+                    <field name="subsidiary_id" on_change="onchange_subsidiary(subsidiary_id)"
+                        groups="base.group_multi_company" widget="selection"/>
+                </xpath>
+            </field>
+        </record>
+
+    </data>
+</openerp>

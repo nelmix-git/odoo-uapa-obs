@@ -1,0 +1,32 @@
+<?xml version="1.0" encoding="utf-8"?>
+<openerp>
+<data>
+
+    <record model="ir.ui.view" id="res_partner_view_inherit">
+        <field name="name">res.partner.view.inherit</field>
+        <field name="model">res.partner</field>
+        <field name="inherit_id" ref="account.view_partner_property_form"/>
+        <field name="arch" type="xml">
+            <xpath expr="//field[@name='property_payment_term']" position="replace">
+                <field name="property_payment_term" attrs="{'required':[('customer','=',True)]}"/>
+            </xpath>
+            <xpath expr="//field[@name='property_supplier_payment_term']" position="replace">
+                <field name="property_supplier_payment_term" attrs="{'required':[('supplier','=', True)]}"/>
+            </xpath>
+        </field>
+    </record>
+
+    <record model="ir.ui.view" id="res_partner_view_inherit">
+        <field name="name">res.partner.view.inherit</field>
+        <field name="model">res.partner</field>
+        <field name="inherit_id" ref="base.view_partner_form"/>
+        <field name="arch" type="xml">
+            <xpath expr="//field[@name='phone']" position="before">
+                <field name="employee"/>
+            </xpath>
+        </field>
+    </record>
+
+
+</data>
+</openerp>

@@ -1,0 +1,817 @@
+# Translation of OpenERP Server.
+# This file contains the translation of the following modules:
+#	* uapa_updates
+#
+msgid ""
+msgstr ""
+"Project-Id-Version: OpenERP Server 7.0-20130610-231029\n"
+"Report-Msgid-Bugs-To: \n"
+"POT-Creation-Date: 2013-10-17 14:34+0000\n"
+"PO-Revision-Date: 2013-10-17 14:34+0000\n"
+"Last-Translator: <>\n"
+"Language-Team: \n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: \n"
+"Plural-Forms: \n"
+
+#. module: uapa_updates
+#: field:hr.employee.formation,specialization:0
+msgid "Specialization"
+msgstr "Especialización"
+
+#. module: uapa_updates
+#: model:ir.actions.act_window,name:uapa_updates.open_view_contract_news_concepts
+msgid "open.view.contract.news.concepts"
+msgstr ""
+
+#. module: uapa_updates
+#: field:hr.employee.formation,careers_ids:0
+msgid "Career id"
+msgstr "Carrera"
+
+#. module: uapa_updates
+#: selection:hr.employee.family,relationship:0
+msgid "Daughter/Son"
+msgstr ""
+
+#. module: uapa_updates
+#: view:hr.employee:0
+msgid "Emergency Contact"
+msgstr "Contacto de Emergencia"
+
+#. module: uapa_updates
+#: field:book.editors,code:0
+msgid "Editor code"
+msgstr "Editor de Codigo"
+
+#. module: uapa_updates
+#: model:ir.actions.act_window,name:uapa_updates.open_view_careers
+msgid "open.view.careers"
+msgstr ""
+
+#. module: uapa_updates
+#: field:account.asset.move,asset_id:0
+#: model:ir.model,name:uapa_updates.model_account_asset_asset
+msgid "Asset"
+msgstr "Activo"
+
+#. module: uapa_updates
+#: field:stock.location,department_id:0
+msgid "Department"
+msgstr "Departamento"
+
+#. module: uapa_updates
+#: view:account.asset.move:0
+msgid "Assets moves"
+msgstr "Mover Activos"
+
+#. module: uapa_updates
+#: field:hr.expense.expense,expense_type:0
+msgid "Type of Event"
+msgstr "Tipo de evento"
+
+#. module: uapa_updates
+#: field:hr.contract.news,frecuency_number:0
+msgid "Frecuency Number"
+msgstr "Numero de frecuencia"
+
+#. module: uapa_updates
+#: field:account.asset.asset,category:0
+msgid "Type of asset"
+msgstr "Tipo de activo"
+
+#. module: uapa_updates
+#: field:account.asset.asset,department_id:0
+msgid "Departament"
+msgstr "Departamento"
+
+#. module: uapa_updates
+#: field:account.asset.asset,brand_id:0
+msgid "Brand"
+msgstr "Marca"
+
+#. module: uapa_updates
+#: model:ir.model,name:uapa_updates.model_account_asset_brand
+msgid "account.asset.brand"
+msgstr ""
+
+#. module: uapa_updates
+#: field:account.asset.move,movement_category:0
+msgid "Movement category"
+msgstr "Categoria de movimiento"
+
+#. module: uapa_updates
+#: model:ir.model,name:uapa_updates.model_event_registration
+msgid "Event Registration"
+msgstr "Registro de evento"
+
+#. module: uapa_updates
+#: selection:account.asset.move,movement_category:0
+msgid "Donation"
+msgstr "Donacion"
+
+#. module: uapa_updates
+#: field:book.editors,name:0
+msgid "Editor name"
+msgstr "Nombre del editor"
+
+#. module: uapa_updates
+#: model:ir.model,name:uapa_updates.model_hr_payslip
+msgid "Pay Slip"
+msgstr "Hoja de pago"
+
+#. module: uapa_updates
+#: field:hr.contract.news,apply_on:0
+msgid "Apply On"
+msgstr "Aplicar en"
+
+#. module: uapa_updates
+#: model:ir.model,name:uapa_updates.model_account_asset_stage
+msgid "account.asset.stage"
+msgstr ""
+
+#. module: uapa_updates
+#: field:books.authors,code:0
+msgid "Book Code"
+msgstr "Libro de codigo"
+
+#. module: uapa_updates
+#: model:ir.ui.menu,name:uapa_updates.menu_asset_movement
+msgid "Asset Movements"
+msgstr "Movimientos de activos"
+
+#. module: uapa_updates
+#: field:account.asset.move,destiny_company:0
+msgid "Destiny company"
+msgstr "Empresa destino"
+
+#. module: uapa_updates
+#: model:ir.actions.act_window,name:uapa_updates.account_asset_overload_view
+msgid "Account Asset View"
+msgstr "Ver cuentas de activos"
+
+#. module: uapa_updates
+#: view:hr.employee:0
+#: field:hr.employee,family_info_ids:0
+#: field:hr.employee.family,employee_id:0
+msgid "Family Info"
+msgstr "Imformacion de familia"
+
+#. module: uapa_updates
+#: field:hr.employee,hr_employee_ars_id:0
+msgid "ARS Affiliate"
+msgstr "Afiliar ARS"
+
+#. module: uapa_updates
+#: field:hr.contract.news,amount:0
+msgid "Amount"
+msgstr "Cantidad"
+
+#. module: uapa_updates
+#: field:account.voucher,amount:0
+msgid "Amount"
+msgstr "Cantidad"
+
+#. module: uapa_updates
+#: selection:hr.employee.family,relationship:0
+msgid "Mother"
+msgstr "Madre"
+
+#. module: uapa_updates
+#: selection:hr.contract.news,frecuency_type:0
+msgid "Fixed"
+msgstr "fijo"
+
+#. module: uapa_updates
+#: help:account.asset.asset,stage_id:0
+msgid "The stage of the asset indicate in wich point of his life is\n"
+"        at the moment. You can add new stages in configuration."
+msgstr ""
+
+#. module: uapa_updates
+#: view:account.asset.stage:0
+#: model:ir.ui.menu,name:uapa_updates.menu_asset_stages
+msgid "Asset stages"
+msgstr "Etapas de activos"
+
+#. module: uapa_updates
+#: model:ir.actions.act_window,name:uapa_updates.open_asset_movement_view
+msgid "Asset Moves"
+msgstr "Mover activos"
+
+#. module: uapa_updates
+#: model:ir.model,name:uapa_updates.model_hr_salary_rule
+msgid "hr_salary_rule"
+msgstr ""
+
+#. module: uapa_updates
+#: model:ir.model,name:uapa_updates.model_book_editors
+msgid "book.editors"
+msgstr ""
+
+#. module: uapa_updates
+#: field:hr.employee.formation,date_finish_specialization:0
+msgid "Finish date specialization"
+msgstr "Termina especialización"
+
+#. module: uapa_updates
+#: selection:hr.contract.news,apply_on:0
+msgid "First Month Payment"
+msgstr "Primer mes de pago"
+
+#. module: uapa_updates
+#: view:hr.employee:0
+msgid "Events Information"
+msgstr "Imformacion de eventos"
+
+#. module: uapa_updates
+#: model:ir.model,name:uapa_updates.model_hr_employee_family
+msgid "hr.employee.family"
+msgstr ""
+
+#. module: uapa_updates
+#: view:account.asset.move:0
+msgid "Asset move"
+msgstr "Mover activo"
+
+#. module: uapa_updates
+#: selection:hr.employee.family,gender:0
+msgid "Female"
+msgstr "Femenino"
+
+#. module: uapa_updates
+#: model:ir.model,name:uapa_updates.model_res_partner
+msgid "Partner"
+msgstr "Socio"
+
+#. module: uapa_updates
+#: field:account.asset.asset,stage_id:0
+msgid "Stage"
+msgstr "Etapa"
+
+#. module: uapa_updates
+#: field:hr.expense.expense,event_id:0
+#: selection:hr.expense.expense,expense_type:0
+#: model:ir.model,name:uapa_updates.model_event_event
+msgid "Event"
+msgstr "Eventos"
+
+#. module: uapa_updates
+#: field:hr.employee.formation,date_finish_career:0
+msgid "Finish date career"
+msgstr "Fecha final de la carrera"
+
+#. module: uapa_updates
+#: field:hr.employee,home_address:0
+msgid "Personal Address"
+msgstr "Direccion personal"
+
+#. module: uapa_updates
+#: selection:account.asset.move,status:0
+msgid "Confirmed"
+msgstr "Confirmado"
+
+#. module: uapa_updates
+#: field:hr.expense.expense,proyect_id:0
+msgid "Proyect"
+msgstr "Proyecto"
+
+#. module: uapa_updates
+#: model:ir.actions.act_window,name:uapa_updates.open_view_ars
+msgid "open.view.ars"
+msgstr ""
+
+#. module: uapa_updates
+#: view:account.asset.move:0
+msgid "Confirm"
+msgstr "Confirmar"
+
+#. module: uapa_updates
+#: selection:account.asset.asset,category:0
+msgid "Scholarly"
+msgstr "Academico"
+
+#. module: uapa_updates
+#: selection:account.asset.move,movement_category:0
+msgid "Company change"
+msgstr "Cambio de empresa"
+
+#. module: uapa_updates
+#: field:account.asset.brand,name:0
+msgid "Asset brand"
+msgstr "Marca de activos"
+
+#. module: uapa_updates
+#: model:ir.model,name:uapa_updates.model_stock_location
+msgid "Location"
+msgstr "Ubicacion"
+
+#. module: uapa_updates
+#: field:product.product,is_book:0
+msgid "Is Book"
+msgstr "Es libro"
+
+#. module: uapa_updates
+#: view:books.authors:0
+#: model:ir.actions.act_window,name:uapa_updates.open_books_authors_view
+#: model:ir.ui.menu,name:uapa_updates.menu_books_authors
+msgid "Books Authors"
+msgstr "Autores de libros"
+
+#. module: uapa_updates
+#: field:hr.employee.formation,employee_id:0
+msgid "Employee id"
+msgstr "Identificación del Empleado"
+
+#. module: uapa_updates
+#: field:hr.employee.family,relationship:0
+msgid "Relationship"
+msgstr "Relacion"
+
+#. module: uapa_updates
+#: model:ir.ui.menu,name:uapa_updates.menu_book_editors
+msgid "Book Editors"
+msgstr "Editores de libros"
+
+#. module: uapa_updates
+#: model:ir.model,name:uapa_updates.model_hr_contract_news
+msgid "hr.contract.news"
+msgstr ""
+
+#. module: uapa_updates
+#: model:ir.model,name:uapa_updates.model_hr_payslip_run
+msgid "Payslip Batches"
+msgstr "Monto nomina"
+
+#. module: uapa_updates
+#: field:hr.employee,formation_ids:0
+msgid "Formation"
+msgstr "Formacion"
+
+#. module: uapa_updates
+#: view:books.authors:0
+msgid "Books authors"
+msgstr "Autores de libros"
+
+#. module: uapa_updates
+#: selection:account.asset.asset,category:0
+msgid "None"
+msgstr "ninguno"
+
+#. module: uapa_updates
+#: model:ir.model,name:uapa_updates.model_hr_expense_expense
+msgid "Expense"
+msgstr "Gastos"
+
+#. module: uapa_updates
+#: field:hr.employee,events_ids_registration:0
+msgid "Training Events Registration"
+msgstr "Entrenamiento Eventos Registro"
+
+#. module: uapa_updates
+#: field:hr.contract.news,hr_contract_news_concepts_id:0
+msgid "Contract New Concept"
+msgstr "Nuevo concepto de contrato"
+
+#. module: uapa_updates
+#: model:ir.actions.act_window,name:uapa_updates.action_account_asset_brand
+msgid "Asset brand view action"
+msgstr "Activos acción vista de la marca"
+
+#. module: uapa_updates
+#: view:hr.contract:0
+msgid "HR Contract news"
+msgstr "Novedades de contratos HR"
+
+#. module: uapa_updates
+#: field:account.asset.move,destiny_department:0
+msgid "Destiny department"
+msgstr "Departamento destino"
+
+#. module: uapa_updates
+#: model:ir.model,name:uapa_updates.model_account_invoice_line
+msgid "Invoice Line"
+msgstr "Línea de factura"
+
+#. module: uapa_updates
+#: view:hr.contract:0
+#: field:hr.contract,hr_contract_news_ids:0
+msgid "Contract News"
+msgstr "Novedades de contrato"
+
+#. module: uapa_updates
+#: model:ir.model,name:uapa_updates.model_books_authors
+msgid "books.authors"
+msgstr ""
+
+#. module: uapa_updates
+#: model:ir.model,name:uapa_updates.model_account_asset_move
+msgid "account.asset.move"
+msgstr ""
+
+#. module: uapa_updates
+#: help:account.asset.move,movement_category:0
+msgid "The category to wich the movement belongs."
+msgstr ""
+
+#. module: uapa_updates
+#: field:hr.contract.news,start_date:0
+msgid "Start Date"
+msgstr "Fecha de inicio"
+
+#. module: uapa_updates
+#: view:book.editors:0
+msgid "Book editors"
+msgstr "Editores de libros"
+
+#. module: uapa_updates
+#: model:ir.model,name:uapa_updates.model_account_asset_model
+msgid "account.asset.model"
+msgstr ""
+
+#. module: uapa_updates
+#: selection:hr.contract,payroll_type:0
+msgid "Educational"
+msgstr "Educativo"
+
+#. module: uapa_updates
+#: field:hr.contract,payroll_type:0
+msgid "Payroll_type"
+msgstr ""
+
+#. module: uapa_updates
+#: selection:account.asset.move,status:0
+msgid "Draft"
+msgstr "Borrador"
+
+#. module: uapa_updates
+#: field:books.authors,name:0
+msgid "Author Name"
+msgstr "Nombre del autor"
+
+#. module: uapa_updates
+#: view:hr.recruitment.career:0
+#: model:ir.ui.menu,name:uapa_updates.menu_employee_careers
+msgid "Careers"
+msgstr "Carrera"
+
+#. module: uapa_updates
+#: field:account.asset.move,status:0
+msgid "Status"
+msgstr "Estatus"
+
+#. module: uapa_updates
+#: selection:hr.employee.family,gender:0
+msgid "Male"
+msgstr "masculino"
+
+#. module: uapa_updates
+#: view:account.asset.model:0
+#: field:account.asset.model,name:0
+msgid "Asset model"
+msgstr "Modelo de Activos"
+
+#. module: uapa_updates
+#: field:hr.employee.formation,degree_id:0
+msgid "Degree"
+msgstr "Grado"
+
+#. module: uapa_updates
+#: model:ir.actions.act_window,name:uapa_updates.open_book_editors_view
+msgid "open.book.editors.view"
+msgstr ""
+
+#. module: uapa_updates
+#: field:hr.employee.emergency.contact,emergency_contact_phone:0
+msgid "Phone"
+msgstr "Teléfono"
+
+#. module: uapa_updates
+#: model:ir.ui.menu,name:uapa_updates.menu_asset_models
+msgid "Asset models"
+msgstr "Modelos de Activos"
+
+#. module: uapa_updates
+#: view:account.asset.asset:0
+msgid "Test"
+msgstr "Prueba"
+
+#. module: uapa_updates
+#: selection:account.asset.move,movement_category:0
+msgid "Lent"
+msgstr "Prestado"
+
+#. module: uapa_updates
+#: selection:hr.contract.news,frecuency_type:0
+msgid "Variable"
+msgstr ""
+
+#. module: uapa_updates
+#: view:hr.contract.news.concepts:0
+#: model:ir.ui.menu,name:uapa_updates.menu_contract_news_concepts
+msgid "Contract News Concepts"
+msgstr "Nuevos conceptos de contrato"
+
+#. module: uapa_updates
+#: model:ir.model,name:uapa_updates.model_hr_recruitment_career
+msgid "hr.recruitment.career"
+msgstr ""
+
+#. module: uapa_updates
+#: model:ir.model,name:uapa_updates.model_res_company
+msgid "Companies"
+msgstr "Empresas"
+
+#. module: uapa_updates
+#: field:hr.contract.news,contract_id:0
+#: model:ir.model,name:uapa_updates.model_hr_contract
+msgid "Contract"
+msgstr "Contrato"
+
+#. module: uapa_updates
+#: field:account.asset.category,code:0
+#: field:hr.employee,employee_code:0
+#: field:res.company,code:0
+msgid "Code"
+msgstr "Codigo"
+
+#. module: uapa_updates
+#: field:event.event,is_training:0
+msgid "Training?"
+msgstr "Entrenamienoto"
+
+#. module: uapa_updates
+#: model:ir.model,name:uapa_updates.model_account_voucher
+msgid "Accounting Voucher"
+msgstr "Comprobante Contabilidad"
+
+#. module: uapa_updates
+#: selection:hr.expense.expense,expense_type:0
+msgid "General"
+msgstr ""
+
+#. module: uapa_updates
+#: view:hr.employee:0
+#: field:hr.employee,emergency_contact:0
+msgid "Emergency Contacts"
+msgstr "Contactos de emergencia"
+
+#. module: uapa_updates
+#: model:ir.model,name:uapa_updates.model_hr_payslip_employees
+msgid "Generate payslips for all selected employees"
+msgstr "Generar nóminas de todos los empleados seleccionados"
+
+#. module: uapa_updates
+#: help:account.asset.asset,category:0
+msgid "The type of\n"
+"    asset, scholarly or administrative."
+msgstr ""
+
+#. module: uapa_updates
+#: view:account.asset.move:0
+#: selection:account.asset.move,status:0
+msgid "Cancel"
+msgstr "Cancelar"
+
+#. module: uapa_updates
+#: selection:hr.contract.news,apply_on:0
+msgid "Second Month Payment"
+msgstr "Pago del segundo mes"
+
+#. module: uapa_updates
+#: field:account.asset.move,origin_company:0
+msgid "Origin company"
+msgstr "Empresa de origen"
+
+#. module: uapa_updates
+#: field:hr.employee.family,date_of_birth:0
+msgid "Date of birth"
+msgstr "Fecha de nacimiento"
+
+#. module: uapa_updates
+#: view:hr.employee:0
+msgid "Proffesional Formation"
+msgstr "Formación Profesional"
+
+#. module: uapa_updates
+#: selection:hr.employee.family,relationship:0
+msgid "Father"
+msgstr "Padre"
+
+#. module: uapa_updates
+#: field:product.product,book_author_id:0
+msgid "Book Authors"
+msgstr "Autores de libros"
+
+#. module: uapa_updates
+#: field:event.registration,employee_id:0
+#: field:hr.employee.emergency.contact,employee_id:0
+#: model:ir.model,name:uapa_updates.model_hr_employee
+msgid "Employee"
+msgstr "Empleado"
+
+#. module: uapa_updates
+#: selection:hr.employee.family,relationship:0
+msgid "Other"
+msgstr "Otros"
+
+#. module: uapa_updates
+#: model:ir.model,name:uapa_updates.model_hr_employee_emergency_contact
+msgid "hr.employee.emergency.contact"
+msgstr ""
+
+#. module: uapa_updates
+#: field:hr.employee,partner_phone:0
+msgid "Personal Phone"
+msgstr "Telefono personal"
+
+#. module: uapa_updates
+#: selection:account.asset.asset,category:0
+#: selection:hr.contract,payroll_type:0
+msgid "Administrative"
+msgstr "Administrativo"
+
+#. module: uapa_updates
+#: field:account.asset.move,origin_department:0
+msgid "Origin department"
+msgstr "Departamento de origen"
+
+#. module: uapa_updates
+#: field:hr.contract.news,frecuency_type:0
+msgid "Frecuency Type"
+msgstr "Tipos de frecuencias"
+
+#. module: uapa_updates
+#: field:product.product,editorials_id:0
+msgid "Editorials"
+msgstr "Editoriales"
+
+#. module: uapa_updates
+#: field:account.asset.stage,description:0
+msgid "Description"
+msgstr "Descripcion"
+
+#. module: uapa_updates
+#: model:ir.actions.act_window,name:uapa_updates.action_asset_stages
+msgid "Asset stages action"
+msgstr "Etapas de Activos en acción"
+
+#. module: uapa_updates
+#: field:hr.employee,nss_id:0
+msgid "NSS"
+msgstr "NSS"
+
+#. module: uapa_updates
+#: field:hr.contract.news,end_date:0
+msgid "End Date"
+msgstr "Fecha Final"
+
+#. module: uapa_updates
+#: field:account.asset.stage,name:0
+#: field:hr.contract.news.concepts,name:0
+#: field:hr.employee.ars,name:0
+#: field:hr.employee.emergency.contact,name:0
+#: field:hr.employee.family,name:0
+#: field:hr.recruitment.career,name:0
+msgid "Name"
+msgstr "Nombre"
+
+#. module: uapa_updates
+#: help:event.event,is_training:0
+msgid "Select this field if this event falls into the employee improvement program."
+msgstr "Seleccione este campo si este evento cae en el programa de mejora de los empleados"
+
+#. module: uapa_updates
+#: field:hr.employee.family,gender:0
+msgid "Gender"
+msgstr "Género"
+
+#. module: uapa_updates
+#: model:ir.model,name:uapa_updates.model_product_product
+msgid "Product"
+msgstr "Producto"
+
+#. module: uapa_updates
+#: model:ir.model,name:uapa_updates.model_account_asset_category
+msgid "Asset category"
+msgstr "Categoria de activo"
+
+#. module: uapa_updates
+#: field:account.asset.asset,model_id:0
+#: field:account.asset.brand,model_id:0
+msgid "Model"
+msgstr "Modelo"
+
+#. module: uapa_updates
+#: selection:hr.expense.expense,expense_type:0
+msgid "Project"
+msgstr "Proyecto"
+
+#. module: uapa_updates
+#: view:account.asset.brand:0
+#: model:ir.ui.menu,name:uapa_updates.menu_asset_brands
+msgid "Asset brands"
+msgstr "Marcas de activos"
+
+#. module: uapa_updates
+#: view:hr.employee.ars:0
+#: model:ir.ui.menu,name:uapa_updates.menu_employee_ars
+msgid "ARS"
+msgstr "ARS"
+
+#. module: uapa_updates
+#: field:hr.contract.news.concepts,sequence:0
+#: field:hr.employee.ars,sequence:0
+#: field:hr.recruitment.career,sequence:0
+msgid "Sequence"
+msgstr "Secuencia"
+
+#. module: uapa_updates
+#: field:account.asset.move,date:0
+msgid "Move date"
+msgstr "Fecha de movimiento"
+
+#. module: uapa_updates
+#: model:ir.model,name:uapa_updates.model_hr_employee_ars
+msgid "hr.employee.ars"
+msgstr ""
+
+#. module: uapa_updates
+#: view:event.event:0
+#: field:event.event,expenses_ids:0
+#: model:ir.ui.menu,name:uapa_updates.menu_events_expenses
+msgid "Expenses"
+msgstr "Gastos"
+
+#. module: uapa_updates
+#: model:ir.actions.act_window,name:uapa_updates.action_account_asset_model
+msgid "Asset model view action"
+msgstr "Activos modelo de acción vista"
+
+#. module: uapa_updates
+#: model:ir.model,name:uapa_updates.model_hr_employee_formation
+msgid "hr.employee.formation"
+msgstr ""
+
+#. module: uapa_updates
+#: model:ir.model,name:uapa_updates.model_hr_contract_news_concepts
+msgid "hr.contract.news.concepts"
+msgstr ""
+
+#. module: uapa_updates
+#: field:hr.employee.formation,date_start:0
+msgid "Date start"
+msgstr "Fecha de inicio"
+
+#. module: uapa_updates
+#: field:hr.employee.formation,date_end:0
+msgid "Date end"
+msgstr "Fecha de finalización"
+
+#. module: uapa_updates
+#: field:hr.employee.formation,career_id:0
+msgid "Career"
+msgstr "Carrera"
+
+#. module: uapa_updates
+#: view:account.asset.asset:0
+#: field:account.asset.asset,asset_move_ids:0
+msgid "Movements"
+msgstr "Movimientos"
+
+#. module: uapa_updates
+#: help:account.asset.move,date:0
+msgid "Date when the movement is executed"
+msgstr "Fecha en la que se ejecuta el movimiento."
+
+#. module: uapa_updates
+#: help:account.asset.asset,life_expectancy:0
+msgid "Life expectancy\n"
+"     of the asset in years."
+msgstr "Expectativa de vida util del activo en años."
+
+#. module: uapa_updates
+#: field:account.asset.asset,life_expectancy_percentage:0
+msgid "Life Expectancy Percentage"
+msgstr "Porcentaje de vida util"
+
+#. module: uapa_updates
+#: field:account.asset.asset,life_expectancy:0
+msgid "Life Expectancy"
+msgstr "Años de vida util"
+
+#. module: uapa_updates
+#: field:account.journal,is_credit_card:0
+msgid "Credit card"
+msgstr "Tarjeta de crédito"
+
+#. module: uapa_updates
+#: field:account.journal,porcentual_value:0
+msgid "Porcental value"
+msgstr "Valor porcentual"
+
+#. module: uapa_updates
+#: field:account.journal,expense_account:0
+msgid "Expense account"
+msgstr "Cuenta de gastos"

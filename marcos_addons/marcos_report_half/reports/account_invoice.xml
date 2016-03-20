@@ -1,0 +1,165 @@
+<?xml version="1.0" encoding="utf-8"?>
+<openerp>
+    <data>
+
+        <report
+                id="half_account_invoices"
+                model="account.invoice"
+                string="Factura media pagina"
+                report_type="qweb-pdf"
+                name="marcos_report_half.half_invoice_report"
+                file="marcos_report_half.half_invoice_report"
+        />
+
+        <template id="marcos_report_half.half_header">
+            <div class="header">
+                <div class="row">
+                    <div class="col-xs-8">
+                        <h4>
+                            <span t-field="o.company_id.name"/>
+                        </h4>
+                    </div>
+                    <div class="col-xs-4" style="text-align:right">
+                        Pagina
+                        <span class="page"/>
+                        de
+                        <span class="topage"/>
+                    </div>
+                </div>
+            </div>
+        </template>
+
+        <template id="marcos_report_half.half_footer">
+            <div class="footer">
+                <div class="row mt16 mb16" style="text-align:center">
+                    <strong>GRACIAS POR SU COMPRA</strong>
+                </div>
+                <!-- THIRD ROW -->
+                <div class="row" style="background-color:#568eff;color:#ffffff;">
+                    <div class="col-xs-8">
+                        <strong>
+                            <span t-field="o.company_id.rml_header1"/>
+                        </strong>
+                        <br/>
+                        Line 1
+                        <br/>
+                        Line 2
+                        <br/>
+                        Line 3
+                    </div>
+
+                </div>
+            </div>
+        </template>
+
+        <template id="marcos_report_half.half_layout">
+            <style>
+                body {
+                font-family: Courier New !important;
+                font-size: 12px !important;
+                }
+            </style>
+            <t t-call="marcos_report_half.half_header"/>
+            <t t-raw="0"/>
+            <t t-call="marcos_report_half.half_footer"/>
+        </template>
+
+        <template id="marcos_report_half.half_invoice_report">
+            <t t-foreach="docs" t-as="o">
+                <t t-call="marcos_report_half.half_layout">
+
+                    <div class="page">
+
+
+                        <!-- SECOND ROW -->
+                        <div class="row">
+                            <div class="col-xs-6">
+                                <strong>Facturado a:</strong>
+                                <br/>
+                                <t t-if="o.partner_id.ref">
+                                    <strong>RNC: </strong><span t-field="o.partner_id.ref"/>
+                                    <br/>
+                                </t>
+                                <span t-field="o.partner_id.name"/>
+                                <br/>
+                                <t t-if="o.partner_id.street">
+                                    <span t-field="o.partner_id.street"/>
+                                </t>
+                                <t t-if="o.partner_id.street">
+                                    <span t-field="o.partner_id.street2"/>
+                                </t>
+                            </div>
+                            <div class="col-xs-2">
+
+                                <strong>Tipo:</strong>
+                                <br/>
+                                <strong>NCF:</strong>
+                                <br/>
+                                <strong>Fecha:</strong>
+                                <br/>
+                                <strong>Vence:</strong>
+                                <br/>
+                                <strong>Pedido No.:</strong>
+                            </div>
+                            <div class="col-xs-4">
+
+                                <span t-if="o.type == 'out_invoice' and (o.state == 'open' or o.state == 'paid')">
+                                    <span t-field="o.journal_id.name"/>
+                                </span>
+                                <span t-if="o.type == 'out_invoice' and o.state == 'proforma2'">PRO-FORMA</span>
+                                <span t-if="o.type == 'out_invoice' and o.state == 'draft'">Factura en borrador
+                                </span>
+                                <span t-if="o.type == 'out_invoice' and o.state == 'cancel'">Factura cancelada
+                                </span>
+                                <span t-if="o.type == 'out_refund'">Nota de credito</span>
+                                <span t-if="o.type == 'in_refund'">Nota de credito proveedor</span>
+                                <span t-if="o.type == 'in_invoice'">Factura proveedor</span>
+                                <br/>
+                                <span t-field="o.number"/>
+                                <br/>
+                                <span t-field="o.date_invoice"/>
+                                <br/>
+                                <span t-field="o.date_due"/>
+                                <br/>
+                                <span t-field="o.origin"/>
+                            </div>
+                        </div>
+
+                        <!-- FOURTH ROW -->
+                        <div class="row mt32" style="border: 1px solid;;">
+                            <div class="col-xs-5">Descripcion del producto</div>
+                            <div class="col-xs-1">Cant.</div>
+                            <div class="col-xs-1">Prec.</div>
+                            <div class="col-xs-1">Desc.</div>
+                            <div class="col-xs-2">Impuesto</div>
+                            <div class="col-xs-2">Total</div>
+                        </div>
+
+                        <!-- FIFTH ROW -->
+                        <div class="row" t-foreach="o.invoice_line" t-as="l">
+                            <div class="col-xs-5" ><span t-field="l.name"/></div>
+                            <div class="col-xs-1" ><span t-field="l.quantity"/></div>
+                            <div class="col-xs-1" ><span t-field="l.price_unit"/></div>
+                            <div class="col-xs-1" ><span t-field="l.discount"/></div>
+                            <div class="col-xs-2" ><span t-esc="', '.join(map(lambda x: x.name, l.invoice_line_tax_id))"/></div>
+                            <div class="col-xs-2"><span t-field="l.price_subtotal"
+                                                          t-field-options='{"widget": "monetary", "display_currency": "o.currency_id"}'/></div>
+                        </div>
+
+                        <!-- SIXTH ROW -->
+                        <div class="row">
+                            <div class="col-xs-10" style="text-align:right;border: 1px solid #568eff;">
+                                <strong>Total:</strong>
+                            </div>
+                            <div class="col-xs-2" style="text-align:right;border: 1px solid #568eff;border-left:0px;">
+                                <strong>100.00</strong>
+                            </div>
+                        </div>
+
+                    </div>
+                </t>
+            </t>
+        </template>
+
+    </data>
+</openerp>
