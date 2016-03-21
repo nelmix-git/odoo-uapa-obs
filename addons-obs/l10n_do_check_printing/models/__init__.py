@@ -24,3 +24,4 @@
 
 import check_report_config
 import account
+import account_voucher

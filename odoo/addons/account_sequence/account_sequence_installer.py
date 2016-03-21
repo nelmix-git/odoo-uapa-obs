@@ -68,15 +68,15 @@ class account_sequence_installer(osv.osv_memory):
         obj_sequence = self.pool.get('ir.sequence')
         ir_seq = obj_sequence.create(cr, uid, vals, context)
         res =  super(account_sequence_installer, self).execute(cr, uid, ids, context=context)
-        jou_obj = self.pool.get('account.journal')
-        journal_ids = jou_obj.search(cr, uid, search_criteria, context=context)
-        for journal in jou_obj.browse(cr, uid, journal_ids, context=context):
-            if not journal.internal_sequence_id:
-                j_ids.append(journal.id)
-        if j_ids:
-            jou_obj.write(cr, uid, j_ids, {'internal_sequence_id': ir_seq})
-        ir_values_obj = self.pool.get('ir.values')
-        ir_values_obj.set(cr, uid, key='default', key2=False, name='internal_sequence_id', models =[('account.journal', False)], value=ir_seq)
+        #jou_obj = self.pool.get('account.journal')
+        #journal_ids = jou_obj.search(cr, uid, search_criteria, context=context)
+        #for journal in jou_obj.browse(cr, uid, journal_ids, context=context):
+        #    if not journal.internal_sequence_id:
+        #        j_ids.append(journal.id)
+        #if j_ids:
+        #    jou_obj.write(cr, uid, j_ids, {'internal_sequence_id': ir_seq})
+        #ir_values_obj = self.pool.get('ir.values')
+        #ir_values_obj.set(cr, uid, key='default', key2=False, name='internal_sequence_id', models =[('account.journal', False)], value=ir_seq)
         return res
 
 

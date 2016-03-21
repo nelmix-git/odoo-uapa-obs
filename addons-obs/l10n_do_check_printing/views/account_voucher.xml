@@ -11,7 +11,8 @@
                     <group name="voucher_number" string="Numero de Cheque a Imprimir(Se mostrara al guardar el registro) " col="4" colspan="4">
                         <h1>
                             <label string="Numero "/>
-                            <field name="voucher_number" class="oe_inline" readonly="1" options='{"always_reload": False}' attrs="{'invisible':[('voucher_number','=', 0 )]}"/>
+                            <field name="voucher_number" class="oe_inline" readonly="1"
+                                   options='{"always_reload": False}' attrs="{'invisible':[('voucher_number','=', 0 )]}"/>
                         </h1>
                     </group>
                 </field>

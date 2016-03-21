@@ -19,7 +19,7 @@
     "name" : "account_invoice_seq_number",
     "version" : "1.0",
     "author" : 'Open Business Solutions, SRL.',
-    "depends" : ["account", "account_sequence","l10n_do"],
+    "depends" : ["account", "account_sequence",],
     'complexity': 'easy',
     "description": """
     """,

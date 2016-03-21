@@ -38,7 +38,6 @@ A collection of small updates for the implementation of UAPA.
         'purchase_order.xml',
         'stock_picking_view.xml',
         'product_normal_form_inherit.xml',
-        'account_voucher.xml',
         'purchase_requisition_form_inherit.xml'],
 'installable':True,
 }

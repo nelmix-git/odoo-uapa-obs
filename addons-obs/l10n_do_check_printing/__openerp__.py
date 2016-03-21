@@ -34,13 +34,14 @@
         Puede configurar la salida (distribución, información trozos, etc.) en los entornos de la empresa, y gestionar el
         cheques de numeración (si utiliza cheques preimpresos sin números) en la configuración de diario.
     """,
-    'depends' : ['account_check_writing'],
+    'depends' : ['account_check_writing', 'account_sequence'],
     'data': [
         'report/paper_data.xml',
         'report/report_data.xml',
         'data/l10n_do_check_printing_data.xml',
         'report/report_template.xml',
         'views/account_view.xml',
+        'views/account_voucher.xml',
         'views/check_report_config_view.xml'
     ],
     'installable': True,
