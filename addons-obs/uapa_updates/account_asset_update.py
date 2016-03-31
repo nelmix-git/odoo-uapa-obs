@@ -1,4 +1,5 @@
 # -*- coding: utf-8 -*-
+#
 from openerp.osv import fields, orm, osv
 from datetime import date
 import logging
