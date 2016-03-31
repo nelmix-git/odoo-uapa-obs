@@ -267,11 +267,7 @@ class AccountAssets(orm.Model):
         move_line_obj = self.pool.get('account.move.line')
         asset_obj = self.pool.get("account.asset.asset")
         asset_lines_obj = self.pool.get('account.asset.depreciation.line')
-        ids = self.get_asset_ids(cr)
         today = date.today()
-        counter = 0
-
-        import pdb; pdb.set_trace()
         asset = asset_obj.search(cr, uid, [('active','=',True), ('state','=','open')])
 
         for record in asset:
@@ -279,16 +275,12 @@ class AccountAssets(orm.Model):
             asset_line = asset_lines_obj.browse(cr, uid, asset_depreciation_lines, context=context)
 
             if asset_line:
-
                 today = date.today()
                 if not asset_line.asset_id.name:
                     asset_name = 'Activo fijo sin nombre'
                 else:
                     asset_name = (asset_line.asset_id.name).encode('utf-8')
-                #asset_name = asset.get('name').encode('utf-8')
-                #asset_line = asset_lines_obj.read(cr, uid, asset_line)
 
-                #if asset_line.get('depreciation_date') <= today.isoformat() and not asset_line.get('move_check'):
                 period_id = self.get_period(cr, uid, asset_line.id)
 
                 if not period_id:
@@ -318,8 +310,7 @@ class AccountAssets(orm.Model):
                     raise orm.except_orm('Error', 'Failure creating the'
                         ' account move lines.')
 
-            #else:
-            #    logging.getLogger(self._name).info("Este activo ya esta asentado!")
+        logging.getLogger(self._name).info("Run asset entries completed sucesfully!")
 
 
     # def run_asset_entry(self, cr, uid, context=None):
