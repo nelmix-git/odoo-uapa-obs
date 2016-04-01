@@ -2,7 +2,9 @@
 #
 from openerp.osv import fields, orm, osv
 from datetime import date
+import time
 import logging
+_logger = logging.getLogger(__name__)
 
 
 class account_invoice_line(osv.osv):
@@ -244,7 +246,7 @@ class AccountAssets(orm.Model):
 
     def get_asset_ids(self, cr, context=None):
         """Retrieve the assets using SQL for a better performance."""
-        query = """SELECT id from {0} WHERE active = True and state like 'open' limit 200"""
+        query = """SELECT id from {0} WHERE active = True and state like 'open' limit 25"""
         query = query.format(self._table)
         cr.execute(query)
         ids = [asset[0] for asset in cr.fetchall() if asset]
@@ -264,55 +266,70 @@ class AccountAssets(orm.Model):
         """
 
         logging.getLogger(self._name).info("Starting run_asset_entry cron job.")
+        starting_point = time.time()
+
         account_move_obj = self.pool.get('account.move')
         move_line_obj = self.pool.get('account.move.line')
         asset_obj = self.pool.get("account.asset.asset")
         asset_lines_obj = self.pool.get('account.asset.depreciation.line')
         today = date.today()
-        asset = asset_obj.search(cr, uid, [('active','=',True), ('state','=','open')])
+        asset = asset_obj.search(cr, uid, [('active','=',True), ('state','=','open')], limit=25)
 
+        import pdb; pdb.set_trace()
         for record in asset:
-            asset_depreciation_lines = asset_lines_obj.search(cr, uid, [('asset_id','=', record), ('depreciation_date','<=',today.isoformat()), ('move_check','=', 0)], limit=1)
-            asset_line = asset_lines_obj.browse(cr, uid, asset_depreciation_lines, context=context)
 
-            if asset_line:
-                today = date.today()
-                if not asset_line.asset_id.name:
-                    asset_name = 'Activo fijo sin nombre'
-                else:
-                    asset_name = (asset_line.asset_id.name).encode('utf-8')
+            try:
+                asset_depreciation_lines = asset_lines_obj.search(cr, uid, [('asset_id','=', record), ('depreciation_date','<=',today.isoformat()), ('move_check','=', 0)], limit=1)
+                asset_line = asset_lines_obj.browse(cr, uid, asset_depreciation_lines, context=context)
+                asset_name = False
+                if asset_line:
+                    today = date.today()
+                    if not asset_line.asset_id.name:
+                        asset_name = 'Activo fijo sin nombre'
+                    else:
+                        asset_name = (asset_line.asset_id.name).encode('utf-8')
 
-                period_id = self.get_period(cr, uid, asset_line.id)
+                    period_id = self.get_period(cr, uid, asset_line.id)
 
-                if not period_id:
-                    company_name = asset_line.asset_id.company_id.name
-                    logging.getLogger(self._name).error(
-                        """No period found for the date {0}
-                        and company {1}""".format(asset_line.depreciation_date, company_name[1]))
-                    break
-                try:
-                    values = self.prepare_account_move(cr, uid, asset_line.id, period_id, context)
-                    created_id = account_move_obj.create(cr, uid, values, context)
-                    logging.getLogger(self._name).info("""account.move created for {0}""".format(asset_name))
-                except:
-                    logging.getLogger(self._name).error("Error creating account move {0}".format(asset_name))
-                    raise orm.except_orm('Error', "Failure creating the account move object.")
-                try:
-                    debit_values = self.prepare_move_line(cr, uid, asset_line.id, created_id, period_id, 'debit')
-                    credit_values = self.prepare_move_line(cr, uid, asset_line.id, created_id, period_id, 'credit')
-                    move_line_obj.create(cr, uid, debit_values, context)
-                    move_line_obj.create(cr, uid, credit_values, context)
-                    asset_lines_obj.write(cr, uid, asset_line.id, {'move_check': True, 'move_id': created_id})
-                    logging.getLogger(self._name).info("""account.move.line created for {0}""".format(asset_name))
-                except:
-                    logging.getLogger('account.asset.asset').error(
-                        """ERROR creating the entries of
-                        account move from {0}.""".format(__name__))
-                    raise orm.except_orm('Error', 'Failure creating the'
-                        ' account move lines.')
+                    if not period_id:
+                        company_name = asset_line.asset_id.company_id.name
+                        logging.getLogger(self._name).error(
+                            """No period found for the date {0}
+                            and company {1}""".format(asset_line.depreciation_date, company_name[1]))
+                        break
+                    try:
+                        values = self.prepare_account_move(cr, uid, asset_line.id, period_id, context)
+                        created_id = account_move_obj.create(cr, uid, values, context)
+                        logging.getLogger(self._name).info("""account.move created for {0}""".format(asset_name))
+                    except:
+                        logging.getLogger(self._name).error("Error creating account move {0}".format(asset_name))
+                        raise orm.except_orm('Error', "Failure creating the account move object.")
+                    try:
+                        debit_values = self.prepare_move_line(cr, uid, asset_line.id, created_id, period_id, 'debit')
+                        credit_values = self.prepare_move_line(cr, uid, asset_line.id, created_id, period_id, 'credit')
+                        move_line_obj.create(cr, uid, debit_values, context)
+                        move_line_obj.create(cr, uid, credit_values, context)
+                        asset_lines_obj.write(cr, uid, asset_line.id, {'move_check': True, 'move_id': created_id})
+                        logging.getLogger(self._name).info("""account.move.line created for {0}""".format(asset_name))
+                    except:
+                        logging.getLogger('account.asset.asset').error(
+                            """ERROR creating the entries of
+                            account move from {0}.""".format(__name__))
+                        raise orm.except_orm('Error', 'Failure creating the'
+                            ' account move lines.')
 
-        logging.getLogger(self._name).info("Run asset entries completed sucesfully!")
+            except:
+                logging.getLogger(self._name).error("This script stop tryn to create a move for asset {0}".format(asset_name))
+                raise orm.except_orm('Error', "Run asset entries finish unsusccesfully.")
 
+        elapsed_time = time.time() - starting_point
+        elapsed_time_int = int(elapsed_time)
+        elapsed_time_minutes = elapsed_time_int / 60
+        elapsed_time_seconds = elapsed_time_int % 60
+
+        logging.getLogger(self._name).info("Run asset entries completed succesfully!")
+        _logger.info('This task has been complete in %s minutos y %s segundos'
+                                 %(elapsed_time_minutes, elapsed_time_seconds))
 
     # def run_asset_entry(self, cr, uid, context=None):
     #     #import pdb; pdb.set_trace()
