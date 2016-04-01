@@ -319,7 +319,7 @@ class AccountAssets(orm.Model):
                             ' account move lines.')
 
             except:
-                logging.getLogger(self._name).error("This script stop tryn to create a move for asset {0}".format(asset_name))
+                logging.getLogger(self._name).error("This script stop trying to create a move for asset {0}!!! Please check".format(asset_name))
                 raise orm.except_orm('Error', "Run asset entries finish unsusccesfully.")
 
         elapsed_time = time.time() - starting_point
