@@ -23,9 +23,8 @@ class AccountVoucher(orm.Model):
             ir_sequence = self.pool.get('account.journal').browse(cr, uid, journal).internal_sequence_id.code
             seq = self.pool.get('ir.sequence').get(cr, uid, ir_sequence)
             vals.update({
-                     'voucher_number': seq
+                     'voucher_number': str(seq)
                  })
             return super(AccountVoucher, self).create(cr, uid, vals, context)
-
 
 AccountVoucher()
