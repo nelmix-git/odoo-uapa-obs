@@ -73,7 +73,7 @@
         </record>
 
         <!--pos_payment-->
-        <record id="marcos_pos_payment_option_wizard_form" model="ir.ui.view">
+        <record id="marcos_pos_payment_option_wizard_form" model="ir.ui.view"   >
             <field name="name">marcos.pos.payment.option.wizard.form</field>
             <field name="model">pos.payment</field>
             <field name="arch" type="xml">
@@ -154,6 +154,7 @@
             <field name="view_id" ref="marcos_pos_refund_option_wizard_form"/>
             <field name="target">new</field>
         </record>
+
 
 
         <record id="marcos_view_confirm_print_fiscal_invoice" model="ir.ui.view">

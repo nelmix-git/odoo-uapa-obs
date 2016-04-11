@@ -273,7 +273,7 @@ class AccountAssets(orm.Model):
         asset_obj = self.pool.get("account.asset.asset")
         asset_lines_obj = self.pool.get('account.asset.depreciation.line')
         today = date.today()
-        asset = asset_obj.search(cr, uid, [('active','=',True), ('state','=','open')], limit=25)
+        asset = asset_obj.search(cr, uid, [('active','=',True), ('state','=','open')])
 
         import pdb; pdb.set_trace()
         for record in asset:

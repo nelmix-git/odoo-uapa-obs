@@ -1,0 +1,10 @@
+<?xml version="1.0" encoding="utf-8"?>
+<openerp>
+    <data>
+        <template id="assets_frontend_pos_payment" inherit_id="web.assets_common">
+            <xpath expr="." position="inside">
+                <script type="text/javascript" src="/pos_payment/static/src/js/pos_payment.js"></script>
+            </xpath>
+        </template>
+    </data>
+</openerp>

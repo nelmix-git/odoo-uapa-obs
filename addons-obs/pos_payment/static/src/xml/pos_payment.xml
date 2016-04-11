@@ -1,0 +1,42 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<templates id="template">
+
+  <t t-name="Paymentline_Fields">
+      <!--remove inline style  -->
+      <div style="margin-top: 8px" t-if="line.has_bank_name">
+          <lable>Bank Name </lable>
+          <input class="bank-name" placeholder="Bank Name"></input>
+      </div>
+
+      <div style="margin-top: 8px" t-if="line.has_cheque_number">
+        <lable>Cheque Number </lable>
+        <input class="check-number" placeholder="Cheque Number"></input>
+      </div>
+      
+       <div style="margin-top: 8px" t-if="line.has_cc_number">
+        <lable>Credit Card Number </lable>
+        <input class="cc-number" placeholder="Credit Card Number"></input>
+      </div>
+      
+       <div style="margin-top: 8px" t-if="line.has_ba_number">
+        <lable>Bank Approval Number </lable>
+        <input class="ba-number" placeholder="Bank Approval Number"></input>
+      </div>
+      
+       <div style="margin-top: 8px" t-if="line.has_trn_number">
+        <lable>Transaction Number </lable>
+        <input class="trn-number" placeholder="Transaction Number"></input>
+      </div>
+  </t>
+  
+  <t t-extend="PaymentScreenWidget">
+      <t t-jquery=".payment-info" t-operation="append">
+          <div class="infoline bigger fiscal-position-info" style="display:none">
+              <span class='left-block'>
+                  Fiscal Position:
+              </span>
+              <span class="right-block fiscal-position"></span>
+          </div>
+      </t>
+  </t>
+</templates>
