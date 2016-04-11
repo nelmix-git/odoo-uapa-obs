@@ -108,7 +108,7 @@ class pos_details(report_sxw.rml_parse):
             timestamp = user_tz.localize(timestamp).astimezone(pytz.utc)
             between_dates[date_field] = timestamp.strftime(tools.DEFAULT_SERVER_DATETIME_FORMAT)
 
-        pos_ids = pos_obj.searchsearch(self.cr, self.uid, [
+        pos_ids = pos_obj.search(self.cr, self.uid, [
             ('date_order', '>=', between_dates['date_start']),
             ('date_order', '<', between_dates['date_end']),
             ('user_id', 'in', user_ids),
@@ -141,7 +141,7 @@ class pos_details(report_sxw.rml_parse):
             timestamp = user_tz.localize(timestamp).astimezone(pytz.utc)
             between_dates[date_field] = timestamp.strftime(tools.DEFAULT_SERVER_DATETIME_FORMAT)
 
-        pos_ids = pos_obj.searchsearch(self.cr, self.uid, [
+        pos_ids = pos_obj.search(self.cr, self.uid, [
             ('date_order', '>=', between_dates['date_start']),
             ('date_order', '<', between_dates['date_end']),
             ('user_id', 'in', user_ids),
@@ -173,12 +173,7 @@ class pos_details(report_sxw.rml_parse):
             ('state', 'in', ['done', 'paid', 'invoiced']),
             ('company_id', '=', company_id)
         ])
-        # pos_ids = pos_order_obj.search(self.cr, self.uid, [
-        #     ('date_order','>=',form['date_start'] + ' 00:00:00'),
-        #     ('date_order','<=',form['date_end'] + ' 23:59:59'),
-        #     ('state','in',['paid','invoiced','done']),
-        #     ('user_id','in',user_ids),
-        #     ('company_id', '=', company_id)])
+
         data={}
         if pos_ids:
             st_line_ids = statement_line_obj.search(self.cr, self.uid, [('pos_statement_id', 'in', pos_ids)])
@@ -230,7 +225,7 @@ class pos_details(report_sxw.rml_parse):
             timestamp = user_tz.localize(timestamp).astimezone(pytz.utc)
             between_dates[date_field] = timestamp.strftime(tools.DEFAULT_SERVER_DATETIME_FORMAT)
 
-        pos_ids = pos_order_obj.searchsearch(self.cr, self.uid, [
+        pos_ids = pos_order_obj.search(self.cr, self.uid, [
             ('date_order', '>=', between_dates['date_start']),
             ('date_order', '<', between_dates['date_end']),
             ('user_id', 'in', user_ids),
