@@ -30,43 +30,43 @@ class AccountJournal(models.Model):
     _inherit = 'account.journal'
 
     has_bank_name = fields.Boolean(
-        string='Add Bank Holder',
+        string='Agregar nombre del banco emisor?',
         help='It will display bank holder input box while you make payment with this payment method')
     has_cheque_number = fields.Boolean(
-        string='Add Cheque number',
+        string='Agregar el número de cheque?',
         help='It will display Cheque name input box while you make payment with this payment method')
     has_cc_number = fields.Boolean(
-        string='Add Credit Card number',
+        string='Agregar el número de la tarjeta de crédito?',
         help='It will display Credit Card number input box while you make payment with this payment method')
     has_ba_number = fields.Boolean(
-        string='Add Bank Approval number',
+        string='Agregar el número de autorización del Banco?',
         help='It will display Bank Approval number input box while you make payment with this payment method')
     has_trn_number = fields.Boolean(
-        string='Add Transaction number',
+        string='Agregar el número de transaccion?',
         help='It will display Transaction number input box while you make payment with this payment method')
 
 class AccountJournal(models.Model):
     _inherit = 'account.bank.statement.line'
 
-    bank_name = fields.Char('Bank Holder')
-    cheque_number = fields.Char('Cheque Number')
-    cc_number = fields.Char('Credit Card Number')
-    ba_number = fields.Char('Bank Approval Number')
-    trn_number = fields.Char('Transaction Number')
+    bank_name = fields.Char('Nombre del Banco Emisor')
+    cheque_number = fields.Char('Numero de Cheque')
+    cc_number = fields.Char('Numero de la Tarjeta de Credito')
+    ba_number = fields.Char('Numero de Aprobacion del Banco')
+    trn_number = fields.Char('Numero de Transaccion')
     has_bank_name = fields.Boolean(related='journal_id.has_bank_name', 
-        string='Add Bank Holder',
+        string='Agregar nombre del banco emisor?',
         help='It will display bank holder input box while you make payment with this payment method')
     has_cheque_number = fields.Boolean(related='journal_id.has_cheque_number',
-        string='Add Cheque number',
+        string='Agregar el número de cheque?',
         help='It will display Cheque name input box while you make payment with this payment method')
     has_cc_number = fields.Boolean(related='journal_id.has_cc_number',
-        string='Add Credit Card number',
+        string='Agregar el número de la tarjeta de crédito?',
         help='It will display Credit Card number input box while you make payment with this payment method')
     has_ba_number =  fields.Boolean(related='journal_id.has_ba_number',
-        string='Add Bank Approval number',
+        string='Agregar el número de autorización del Banco?',
         help='It will display Bank Approval number input box while you make payment with this payment method')
     has_trn_number = fields.Boolean(related='journal_id.has_trn_number', 
-        string='Add Transaction number',
+        string='Agregar el número de transaccion?',
         help='It will display Transaction number input box while you make payment with this payment method')
 
 class PosOrder(models.Model):

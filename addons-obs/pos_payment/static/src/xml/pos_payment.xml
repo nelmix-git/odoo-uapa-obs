@@ -4,23 +4,23 @@
   <t t-name="Paymentline_Fields">
       <!--remove inline style  -->
       <div style="margin-top: 8px" t-if="line.has_bank_name">
-          <lable>Bank Name </lable>
-          <input class="bank-name" placeholder="Bank Name"></input>
+          <lable>Nombre del Banco Emisor </lable>
+          <input class="bank-name" placeholder="Nombre del Banco Emisor"></input>
       </div>
 
       <div style="margin-top: 8px" t-if="line.has_cheque_number">
-        <lable>Cheque Number </lable>
-        <input class="check-number" placeholder="Cheque Number"></input>
+        <lable>Numero de Cheque </lable>
+        <input class="check-number" placeholder="Numero de Cheque"></input>
       </div>
       
        <div style="margin-top: 8px" t-if="line.has_cc_number">
-        <lable>Credit Card Number </lable>
-        <input class="cc-number" placeholder="Credit Card Number"></input>
+        <lable>Numero de la Tarjeta de Credito </lable>
+        <input class="cc-number" placeholder="Numero de la Tarjeta de Credito"></input>
       </div>
       
        <div style="margin-top: 8px" t-if="line.has_ba_number">
-        <lable>Bank Approval Number </lable>
-        <input class="ba-number" placeholder="Bank Approval Number"></input>
+        <lable>Numero de Aprobacion del Banco </lable>
+        <input class="ba-number" placeholder="Numero de Aprobacion del Banco"></input>
       </div>
       
        <div style="margin-top: 8px" t-if="line.has_trn_number">
