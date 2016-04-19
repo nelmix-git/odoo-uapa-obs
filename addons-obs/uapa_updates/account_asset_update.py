@@ -40,7 +40,7 @@ class account_invoice_line(osv.osv):
                         'code': line.invoice_id.number or False,
                         'asset_id': asset_asset_obj.create(cr, uid, asset_asset_vals, context=context),
                         'category_id': line.asset_category_id.id,
-                        'purchase_value': (line.price_subtotal + tax_line_amount),
+                        'purchase_value': (line.price_unit + tax_line_amount),
                         'period_id': line.invoice_id.period_id.id,
                         'partner_id': line.invoice_id.partner_id.id,
                         'company_id': line.invoice_id.company_id.id,
