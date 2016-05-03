@@ -15,235 +15,19 @@
 				    <field name="contract_years"/>
 				    <field name="contract_days"/>
 				  </xpath>
-				  <xpath expr="//page[@name='information']" position="after">
-				    <page name="contract_news" string="Contract News">
-						<separator/>
-						<group>
-
-							<group string="Créditos Servicios UAPA">
-								<field name="csu_apply"/>
-								<field name="csu_discount_amount" attrs="{'invisible':[('csu_apply','=',False)], 'required':[('csu_apply','=',True)]}"/>
-								<field name="csu_frecuency_type" attrs="{'invisible':[('csu_apply','=',False)], 'required':[('csu_apply','=',True)]}"/>
-								<field name="csu_apply_on" attrs="{'invisible':[('csu_apply','=',False)], 'required':[('csu_apply','=',True)] }"/>
-								<field name="csu_frecuency_number" attrs="{'readonly':[('csu_frecuency_type','=', 'fixed')],'required':[('csu_frecuency_type','=', 'variable')] ,'invisible':[('csu_apply','=',False)], 'invisible':[('csu_frecuency_type','=','fixed')]}"/>
-								<field name="csu_start_date" attrs="{'readonly':[('csu_frecuency_type','=', 'fixed')],'required':[('csu_frecuency_type','=', 'variable')] ,'invisible':[('csu_apply','=',False)], 'invisible':[('csu_frecuency_type','=','fixed')]}"/>
-								<field name="csu_end_date" attrs="{'readonly':[('csu_frecuency_type','=', 'fixed')],'required':[('csu_frecuency_type','=', 'variable')] ,'invisible':[('csu_apply','=',False)], 'invisible':[('csu_frecuency_type','=','fixed')]}"/>
-							</group>
-
-							<!--group string="Pago de Maestria">
-								<field name="pma_apply"/>
-								<field name="pma_discount_amount" attrs="{'invisible':[('pma_apply','=',False)], 'required':[('pma_apply','=',True)]}"/>
-								<field name="pma_frecuency_type" attrs="{'invisible':[('pma_apply','=',False)], 'required':[('pma_apply','=',True)]}"/>
-								<field name="pma_apply_on" attrs="{'invisible':[('pma_apply','=',False)], 'required':[('pma_apply','=',True)] }"/>
-								<field name="pma_frecuency_number" attrs="{'readonly':[('pma_frecuency_type','=', 'fixed')],'required':[('pma_frecuency_type','=', 'variable')] ,'invisible':[('pma_apply','=',False)], 'invisible':[('pma_frecuency_type','=','fixed')]}"/>
-								<field name="pma_start_date" attrs="{'readonly':[('pma_frecuency_type','=', 'fixed')],'required':[('pma_frecuency_type','=', 'variable')] ,'invisible':[('pma_apply','=',False)], 'invisible':[('pma_frecuency_type','=','fixed')]}"/>
-								<field name="pma_end_date" attrs="{'readonly':[('pma_frecuency_type','=', 'fixed')],'required':[('pma_frecuency_type','=', 'variable')] ,'invisible':[('pma_apply','=',False)], 'invisible':[('pma_frecuency_type','=','fixed')]}"/>
-							</group-->
-
-							<group string="Crédito Servicios CEGES">
-								<field name="csc_apply"/>
-								<field name="csc_discount_amount" attrs="{'invisible':[('csc_apply','=',False)], 'required':[('csc_apply','=',True)]}"/>
-			                    <field name="csc_frecuency_type" attrs="{'invisible':[('csc_apply','=',False)], 'required':[('csc_apply','=',True)]}"/>
-				                <field name="csc_apply_on" attrs="{'invisible':[('csc_apply','=',False)], 'required':[('csc_apply','=',True)] }"/>
-                        		<field name="csc_frecuency_number" attrs="{'readonly':[('csc_frecuency_type','=', 'fixed')],'required':[('csc_frecuency_type','=', 'variable')] ,'invisible':[('csc_apply','=',False)], 'invisible':[('csc_frecuency_type','=','fixed')]}"/>
-			                    <field name="csc_start_date" attrs="{'readonly':[('csc_frecuency_type','=', 'fixed')],'required':[('csc_frecuency_type','=', 'variable')] ,'invisible':[('csc_apply','=',False)], 'invisible':[('csc_frecuency_type','=','fixed')]}"/>
-                        		<field name="csc_end_date" attrs="{'readonly':[('csc_frecuency_type','=', 'fixed')],'required':[('csc_frecuency_type','=', 'variable')] ,'invisible':[('csc_apply','=',False)], 'invisible':[('csc_frecuency_type','=','fixed')]}"/>
-							</group>
-
-							<group string="Crédito Servicios Colaterales UAPA">
-								<field name="cscu_apply"/>
-								<field name="cscu_discount_amount" attrs="{'invisible':[('cscu_apply','=',False)], 'required':[('cscu_apply','=',True)]}"/>
-								<field name="cscu_frecuency_type" attrs="{'invisible':[('cscu_apply','=',False)], 'required':[('cscu_apply','=',True)]}"/>
-								<field name="cscu_apply_on" attrs="{'invisible':[('cscu_apply','=',False)], 'required':[('cscu_apply','=',True)] }"/>
-								<field name="cscu_frecuency_number" attrs="{'readonly':[('cscu_frecuency_type','=', 'fixed')],'required':[('cscu_frecuency_type','=', 'variable')] ,'invisible':[('cscu_apply','=',False)], 'invisible':[('cscu_frecuency_type','=','fixed')]}"/>
-								<field name="cscu_start_date" attrs="{'readonly':[('cscu_frecuency_type','=', 'fixed')],'required':[('cscu_frecuency_type','=', 'variable')] ,'invisible':[('cscu_apply','=',False)], 'invisible':[('cscu_frecuency_type','=','fixed')]}"/>
-								<field name="cscu_end_date" attrs="{'readonly':[('cscu_frecuency_type','=', 'fixed')],'required':[('cscu_frecuency_type','=', 'variable')] ,'invisible':[('cscu_apply','=',False)], 'invisible':[('cscu_frecuency_type','=','fixed')]}"/>
-							</group>
-
-							<group string="Crédito INCAPRE">
-								<field name="cri_apply"/>
-								<field name="cri_discount_amount" attrs="{'invisible':[('cri_apply','=',False)], 'required':[('cri_apply','=',True)]}"/>
-								<field name="cri_frecuency_type" attrs="{'invisible':[('cri_apply','=',False)], 'required':[('cri_apply','=',True)]}"/>
-								<field name="cri_apply_on" attrs="{'invisible':[('cri_apply','=',False)], 'required':[('cri_apply','=',True)] }"/>
-								<field name="cri_frecuency_number" attrs="{'readonly':[('cri_frecuency_type','=', 'fixed')],'required':[('cri_frecuency_type','=', 'variable')] ,'invisible':[('cri_apply','=',False)], 'invisible':[('cri_frecuency_type','=','fixed')]}"/>
-								<field name="cri_start_date" attrs="{'readonly':[('cri_frecuency_type','=', 'fixed')],'required':[('cri_frecuency_type','=', 'variable')] ,'invisible':[('cri_apply','=',False)], 'invisible':[('cri_frecuency_type','=','fixed')]}"/>
-								<field name="cri_end_date" attrs="{'readonly':[('cri_frecuency_type','=', 'fixed')],'required':[('cri_frecuency_type','=', 'variable')] ,'invisible':[('cri_apply','=',False)], 'invisible':[('cri_frecuency_type','=','fixed')]}"/>
-							</group>
-
-							<group string="Créditos Economato">
-								<field name="eco_apply"/>
-								<field name="eco_discount_amount" attrs="{'invisible':[('eco_apply','=',False)], 'required':[('eco_apply','=',True)]}"/>
-								<field name="eco_frecuency_type" attrs="{'invisible':[('eco_apply','=',False)], 'required':[('eco_apply','=',True)]}"/>
-								<field name="eco_apply_on" attrs="{'invisible':[('eco_apply','=',False)], 'required':[('eco_apply','=',True)] }"/>
-								<field name="eco_frecuency_number" attrs="{'readonly':[('eco_frecuency_type','=', 'fixed')],'required':[('eco_frecuency_type','=', 'variable')] ,'invisible':[('eco_apply','=',False)], 'invisible':[('eco_frecuency_type','=','fixed')]}"/>
-								<field name="eco_start_date" attrs="{'readonly':[('eco_frecuency_type','=', 'fixed')],'required':[('eco_frecuency_type','=', 'variable')] ,'invisible':[('eco_apply','=',False)], 'invisible':[('eco_frecuency_type','=','fixed')]}"/>
-								<field name="eco_end_date" attrs="{'readonly':[('eco_frecuency_type','=', 'fixed')],'required':[('eco_frecuency_type','=', 'variable')] ,'invisible':[('eco_apply','=',False)], 'invisible':[('eco_frecuency_type','=','fixed')]}"/>
-							</group>
-
-							<group string="Financiación Formación Externa">
-								<field name="ffh_apply"/>
-								<field name="ffh_discount_amount" attrs="{'invisible':[('ffh_apply','=',False)], 'required':[('ffh_apply','=',True)]}"/>
-								<field name="ffh_frecuency_type" attrs="{'invisible':[('ffh_apply','=',False)], 'required':[('ffh_apply','=',True)]}"/>
-								<field name="ffh_apply_on" attrs="{'invisible':[('ffh_apply','=',False)], 'required':[('ffh_apply','=',True)] }"/>
-								<field name="ffh_frecuency_number" attrs="{'readonly':[('ffh_frecuency_type','=', 'fixed')],'required':[('ffh_frecuency_type','=', 'variable')] ,'invisible':[('ffh_apply','=',False)], 'invisible':[('ffh_frecuency_type','=','fixed')]}"/>
-								<field name="ffh_start_date" attrs="{'readonly':[('ffh_frecuency_type','=', 'fixed')],'required':[('ffh_frecuency_type','=', 'variable')] ,'invisible':[('ffh_apply','=',False)], 'invisible':[('ffh_frecuency_type','=','fixed')]}"/>
-								<field name="ffh_end_date" attrs="{'readonly':[('ffh_frecuency_type','=', 'fixed')],'required':[('ffh_frecuency_type','=', 'variable')] ,'invisible':[('ffh_apply','=',False)], 'invisible':[('ffh_frecuency_type','=','fixed')]}"/>
-							</group>
-
-							<group string="Otros Préstamos CxP o LP">
-								<field name="op_apply"/>
-								<field name="op_discount_amount" attrs="{'invisible':[('op_apply','=',False)], 'required':[('op_apply','=',True)]}"/>
-			                    <field name="op_frecuency_type" attrs="{'invisible':[('op_apply','=',False)], 'required':[('op_apply','=',True)]}"/>
-				                <field name="op_apply_on" attrs="{'invisible':[('op_apply','=',False)], 'required':[('op_apply','=',True)] }"/>
-                        		<field name="op_frecuency_number" attrs="{'readonly':[('op_frecuency_type','=', 'fixed')],'required':[('op_frecuency_type','=', 'variable')] ,'invisible':[('op_apply','=',False)], 'invisible':[('op_frecuency_type','=','fixed')]}"/>
-			                    <field name="op_start_date" attrs="{'readonly':[('op_frecuency_type','=', 'fixed')],'required':[('op_frecuency_type','=', 'variable')] ,'invisible':[('op_apply','=',False)], 'invisible':[('op_frecuency_type','=','fixed')]}"/>
-                        		<field name="op_end_date" attrs="{'readonly':[('op_frecuency_type','=', 'fixed')],'required':[('op_frecuency_type','=', 'variable')] ,'invisible':[('op_apply','=',False)], 'invisible':[('op_frecuency_type','=','fixed')]}"/>
-							</group>
-							<!--group string="Faltante en Caja">
-								<field name="pfc_apply"/>
-								<field name="pfc_discount_amount" attrs="{'invisible':[('pfc_apply','=',False)], 'required':[('pfc_apply','=',True)]}"/>
-								<field name="pfc_frecuency_type" attrs="{'invisible':[('pfc_apply','=',False)], 'required':[('pfc_apply','=',True)]}"/>
-								<field name="pfc_apply_on" attrs="{'invisible':[('pfc_apply','=',False)], 'required':[('pfc_apply','=',True)] }"/>
-								<field name="pfc_frecuency_number" attrs="{'readonly':[('pfc_frecuency_type','=', 'fixed')],'required':[('pfc_frecuency_type','=', 'variable')] ,'invisible':[('pfc_apply','=',False)], 'invisible':[('pfc_frecuency_type','=','fixed')]}"/>
-								<field name="pfc_start_date" attrs="{'readonly':[('pfc_frecuency_type','=', 'fixed')],'required':[('pfc_frecuency_type','=', 'variable')] ,'invisible':[('pfc_apply','=',False)], 'invisible':[('pfc_frecuency_type','=','fixed')]}"/>
-								<field name="pfc_end_date" attrs="{'readonly':[('pfc_frecuency_type','=', 'fixed')],'required':[('pfc_frecuency_type','=', 'variable')] ,'invisible':[('pfc_apply','=',False)], 'invisible':[('pfc_frecuency_type','=','fixed')]}"/>
-							</group>
-							<group string="Descuento Perdida Ticket">
-								<field name="dpt_apply"/>
-								<field name="dpt_discount_amount" attrs="{'invisible':[('dpt_apply','=',False)], 'required':[('dpt_apply','=',True)]}"/>
-								<field name="dpt_frecuency_type" attrs="{'invisible':[('dpt_apply','=',False)], 'required':[('dpt_apply','=',True)]}"/>
-								<field name="dpt_apply_on" attrs="{'invisible':[('dpt_apply','=',False)], 'required':[('dpt_apply','=',True)] }"/>
-								<field name="dpt_frecuency_number" attrs="{'readonly':[('dpt_frecuency_type','=', 'fixed')],'required':[('dpt_frecuency_type','=', 'variable')] ,'invisible':[('dpt_apply','=',False)], 'invisible':[('dpt_frecuency_type','=','fixed')]}"/>
-								<field name="dpt_start_date" attrs="{'readonly':[('dpt_frecuency_type','=', 'fixed')],'required':[('dpt_frecuency_type','=', 'variable')] ,'invisible':[('dpt_apply','=',False)], 'invisible':[('dpt_frecuency_type','=','fixed')]}"/>
-								<field name="dpt_end_date" attrs="{'readonly':[('dpt_frecuency_type','=', 'fixed')],'required':[('dpt_frecuency_type','=', 'variable')] ,'invisible':[('dpt_apply','=',False)], 'invisible':[('dpt_frecuency_type','=','fixed')]}"/>
-							</group-->
-							<group string="Prestamos a Largo Plazo">
-								<field name="pre_apply"/>
-								<field name="pre_discount_amount" attrs="{'invisible':[('pre_apply','=',False)], 'required':[('pre_apply','=',True)]}"/>
-								<field name="pre_frecuency_type" attrs="{'invisible':[('pre_apply','=',False)], 'required':[('pre_apply','=',True)]}"/>
-								<field name="pre_apply_on" attrs="{'invisible':[('pre_apply','=',False)], 'required':[('pre_apply','=',True)] }"/>
-								<field name="pre_frecuency_number" attrs="{'readonly':[('pre_frecuency_type','=', 'fixed')],'required':[('pre_frecuency_type','=', 'variable')] ,'invisible':[('pre_apply','=',False)], 'invisible':[('pre_frecuency_type','=','fixed')]}"/>
-								<field name="pre_start_date" attrs="{'readonly':[('pre_frecuency_type','=', 'fixed')],'required':[('pre_frecuency_type','=', 'variable')] ,'invisible':[('pre_apply','=',False)], 'invisible':[('pre_frecuency_type','=','fixed')]}"/>
-								<field name="pre_end_date" attrs="{'readonly':[('pre_frecuency_type','=', 'fixed')],'required':[('pre_frecuency_type','=', 'variable')] ,'invisible':[('pre_apply','=',False)], 'invisible':[('pre_frecuency_type','=','fixed')]}"/>
-							</group>
-
-							<group string="Ahorro Cooperativa">
-								<field name="acoop_apply"/>
-								<field name="acoop_discount_amount" attrs="{'invisible':[('acoop_apply','=',False)], 'required':[('acoop_apply','=',True)]}"/>
-								<field name="acoop_frecuency_type" attrs="{'invisible':[('acoop_apply','=',False)], 'required':[('acoop_apply','=',True)]}"/>
-								<field name="acoop_apply_on" attrs="{'invisible':[('acoop_apply','=',False)], 'required':[('acoop_apply','=',True)] }"/>
-								<field name="acoop_frecuency_number" attrs="{'readonly':[('acoop_frecuency_type','=', 'fixed')],'required':[('acoop_frecuency_type','=', 'variable')] ,'invisible':[('acoop_apply','=',False)], 'invisible':[('acoop_frecuency_type','=','fixed')]}"/>
-								<field name="acoop_start_date" attrs="{'readonly':[('acoop_frecuency_type','=', 'fixed')],'required':[('acoop_frecuency_type','=', 'variable')] ,'invisible':[('acoop_apply','=',False)], 'invisible':[('acoop_frecuency_type','=','fixed')]}"/>
-								<field name="acoop_end_date" attrs="{'readonly':[('acoop_frecuency_type','=', 'fixed')],'required':[('acoop_frecuency_type','=', 'variable')] ,'invisible':[('acoop_apply','=',False)], 'invisible':[('acoop_frecuency_type','=','fixed')]}"/>
-							</group>
-
-							<group string="Préstamo Cooperativa">
-								<field name="pcoop_apply"/>
-								<field name="pcoop_discount_amount" attrs="{'invisible':[('pcoop_apply','=',False)], 'required':[('pcoop_apply','=',True)]}"/>
-								<field name="pcoop_frecuency_type" attrs="{'invisible':[('pcoop_apply','=',False)], 'required':[('pcoop_apply','=',True)]}"/>
-								<field name="pcoop_apply_on" attrs="{'invisible':[('pcoop_apply','=',False)], 'required':[('pcoop_apply','=',True)] }"/>
-								<field name="pcoop_frecuency_number" attrs="{'readonly':[('pcoop_frecuency_type','=', 'fixed')],'required':[('pcoop_frecuency_type','=', 'variable')] ,'invisible':[('pcoop_apply','=',False)], 'invisible':[('pcoop_frecuency_type','=','fixed')]}"/>
-								<field name="pcoop_start_date" attrs="{'readonly':[('pcoop_frecuency_type','=', 'fixed')],'required':[('pcoop_frecuency_type','=', 'variable')] ,'invisible':[('pcoop_apply','=',False)], 'invisible':[('pcoop_frecuency_type','=','fixed')]}"/>
-								<field name="pcoop_end_date" attrs="{'readonly':[('pcoop_frecuency_type','=', 'fixed')],'required':[('pcoop_frecuency_type','=', 'variable')] ,'invisible':[('pcoop_apply','=',False)], 'invisible':[('pcoop_frecuency_type','=','fixed')]}"/>
-							</group>
-
-							<group string="Financiación Bienes y Servicios">
-								<field name="fbs_apply"/>
-								<field name="fbs_discount_amount" attrs="{'invisible':[('fbs_apply','=',False)], 'required':[('fbs_apply','=',True)]}"/>
-								<field name="fbs_frecuency_type" attrs="{'invisible':[('fbs_apply','=',False)], 'required':[('fbs_apply','=',True)]}"/>
-								<field name="fbs_apply_on" attrs="{'invisible':[('fbs_apply','=',False)], 'required':[('fbs_apply','=',True)] }"/>
-								<field name="fbs_frecuency_number" attrs="{'readonly':[('fbs_frecuency_type','=', 'fixed')],'required':[('fbs_frecuency_type','=', 'variable')] ,'invisible':[('fbs_apply','=',False)], 'invisible':[('fbs_frecuency_type','=','fixed')]}"/>
-								<field name="fbs_start_date" attrs="{'readonly':[('fbs_frecuency_type','=', 'fixed')],'required':[('fbs_frecuency_type','=', 'variable')] ,'invisible':[('fbs_apply','=',False)], 'invisible':[('fbs_frecuency_type','=','fixed')]}"/>
-								<field name="fbs_end_date" attrs="{'readonly':[('fbs_frecuency_type','=', 'fixed')],'required':[('fbs_frecuency_type','=', 'variable')] ,'invisible':[('fbs_apply','=',False)], 'invisible':[('fbs_frecuency_type','=','fixed')]}"/>
-							</group>
-
-							<group string="Retención por Otros Servicios">
-								<field name="ros_apply"/>
-								<field name="ros_discount_amount" attrs="{'invisible':[('ros_apply','=',False)], 'required':[('ros_apply','=',True)]}"/>
-								<field name="ros_frecuency_type" attrs="{'invisible':[('ros_apply','=',False)], 'required':[('ros_apply','=',True)]}"/>
-								<field name="ros_apply_on" attrs="{'invisible':[('ros_apply','=',False)], 'required':[('ros_apply','=',True)] }"/>
-								<field name="ros_frecuency_number" attrs="{'readonly':[('ros_frecuency_type','=', 'fixed')],'required':[('ros_frecuency_type','=', 'variable')] ,'invisible':[('ros_apply','=',False)], 'invisible':[('ros_frecuency_type','=','fixed')]}"/>
-								<field name="ros_start_date" attrs="{'readonly':[('ros_frecuency_type','=', 'fixed')],'required':[('ros_frecuency_type','=', 'variable')] ,'invisible':[('ros_apply','=',False)], 'invisible':[('ros_frecuency_type','=','fixed')]}"/>
-								<field name="ros_end_date" attrs="{'readonly':[('ros_frecuency_type','=', 'fixed')],'required':[('ros_frecuency_type','=', 'variable')] ,'invisible':[('ros_apply','=',False)], 'invisible':[('ros_frecuency_type','=','fixed')]}"/>
-							</group>
-
-							<group string="Plan Básico Adicional Seguro Medico">
-								<field name="pba_apply"/>
-								<field name="pba_discount_amount" attrs="{'invisible':[('pba_apply','=',False)], 'required':[('pba_apply','=',True)]}"/>
-								<field name="pba_frecuency_type" attrs="{'invisible':[('pba_apply','=',False)], 'required':[('pba_apply','=',True)]}"/>
-								<field name="pba_apply_on" attrs="{'invisible':[('pba_apply','=',False)], 'required':[('pba_apply','=',True)] }"/>
-								<field name="pba_frecuency_number" attrs="{'readonly':[('pba_frecuency_type','=', 'fixed')],'required':[('pba_frecuency_type','=', 'variable')] ,'invisible':[('pba_apply','=',False)], 'invisible':[('pba_frecuency_type','=','fixed')]}"/>
-								<field name="pba_start_date" attrs="{'readonly':[('pba_frecuency_type','=', 'fixed')],'required':[('pba_frecuency_type','=', 'variable')] ,'invisible':[('pba_apply','=',False)], 'invisible':[('pba_frecuency_type','=','fixed')]}"/>
-								<field name="pba_end_date" attrs="{'readonly':[('pba_frecuency_type','=', 'fixed')],'required':[('pba_frecuency_type','=', 'variable')] ,'invisible':[('pba_apply','=',False)], 'invisible':[('pba_frecuency_type','=','fixed')]}"/>
-							</group>
-
-							<group string="Seguro Medico Complementario" >
-								<field name="smc_apply"/>
-								<field name="smc_discount_amount" attrs="{'invisible':[('smc_apply','=',False)], 'required':[('smc_apply','=',True)]}"/>
-								<field name="smc_frecuency_type" attrs="{'invisible':[('smc_apply','=',False)], 'required':[('smc_apply','=',True)]}"/>
-								<field name="smc_apply_on" attrs="{'invisible':[('smc_apply','=',False)], 'required':[('smc_apply','=',True)] }"/>
-								<field name="smc_frecuency_number" attrs="{'readonly':[('smc_frecuency_type','=', 'fixed')],'required':[('smc_frecuency_type','=', 'variable')] ,'invisible':[('smc_apply','=',False)], 'invisible':[('smc_frecuency_type','=','fixed')]}"/>
-								<field name="smc_start_date" attrs="{'readonly':[('smc_frecuency_type','=', 'fixed')],'required':[('smc_frecuency_type','=', 'variable')] ,'invisible':[('smc_apply','=',False)], 'invisible':[('smc_frecuency_type','=','fixed')]}"/>
-								<field name="smc_end_date" attrs="{'readonly':[('smc_frecuency_type','=', 'fixed')],'required':[('smc_frecuency_type','=', 'variable')] ,'invisible':[('smc_apply','=',False)], 'invisible':[('smc_frecuency_type','=','fixed')]}"/>
-							</group>
-
-							<group string="Otros Descuentos">
-								<field name="des_apply"/>
-								<field name="des_discount_amount" attrs="{'invisible':[('des_apply','=',False)], 'required':[('des_apply','=',True)]}"/>
-								<field name="des_frecuency_type" attrs="{'invisible':[('des_apply','=',False)], 'required':[('des_apply','=',True)]}"/>
-								<field name="des_apply_on" attrs="{'invisible':[('des_apply','=',False)], 'required':[('des_apply','=',True)] }"/>
-								<field name="des_frecuency_number" attrs="{'readonly':[('des_frecuency_type','=', 'fixed')],'required':[('des_frecuency_type','=', 'variable')] ,'invisible':[('des_apply','=',False)], 'invisible':[('des_frecuency_type','=','fixed')]}"/>
-								<field name="des_start_date" attrs="{'readonly':[('des_frecuency_type','=', 'fixed')],'required':[('des_frecuency_type','=', 'variable')] ,'invisible':[('des_apply','=',False)], 'invisible':[('des_frecuency_type','=','fixed')]}"/>
-								<field name="des_end_date" attrs="{'readonly':[('des_frecuency_type','=', 'fixed')],'required':[('des_frecuency_type','=', 'variable')] ,'invisible':[('des_apply','=',False)], 'invisible':[('des_frecuency_type','=','fixed')]}"/>
-							</group>
-
-							<group string="Incentivos">
-								<field name="inc_apply"/>
-								<field name="inc_discount_amount" attrs="{'invisible':[('inc_apply','=',False)], 'required':[('inc_apply','=',True)]}"/>
-								<field name="inc_frecuency_type" attrs="{'invisible':[('inc_apply','=',False)], 'required':[('inc_apply','=',True)]}"/>
-								<field name="inc_apply_on" attrs="{'invisible':[('inc_apply','=',False)], 'required':[('inc_apply','=',True)] }"/>
-								<field name="inc_frecuency_number" attrs="{'readonly':[('inc_frecuency_type','=', 'fixed')],'required':[('inc_frecuency_type','=', 'variable')] ,'invisible':[('inc_apply','=',False)], 'invisible':[('inc_frecuency_type','=','fixed')]}"/>
-								<field name="inc_start_date" attrs="{'readonly':[('inc_frecuency_type','=', 'fixed')],'required':[('inc_frecuency_type','=', 'variable')] ,'invisible':[('inc_apply','=',False)], 'invisible':[('inc_frecuency_type','=','fixed')]}"/>
-								<field name="inc_end_date" attrs="{'readonly':[('inc_frecuency_type','=', 'fixed')],'required':[('inc_frecuency_type','=', 'variable')] ,'invisible':[('inc_apply','=',False)], 'invisible':[('inc_frecuency_type','=','fixed')]}"/>
-							</group>
-
-
-
-
-						</group>
-				    </page>
-				  </xpath>
-					<!--xpath expr="//page[@name='information']" position="inside">
-						<group name="contract_news" string="Contract News">
-							<field name="hr_contract_news_ids" mode="tree" nolabel="1" colspan="2">
-								<tree string="HR Contract news" version="7.0" editable="top">
-									<field name="hr_contract_news_concepts_id" widget="selection" />
-									<field name="amount" />
-									<field name="apply_on" />
-									<field name="frecuency_type" />
-									<field name="frecuency_number" attrs="{'readonly':[('frecuency_type','=', 'fixed')]}" />
-									<field name="start_date" attrs="{'readonly':[('frecuency_type','=', 'fixed')]}"/>
-									<field name="end_date" attrs="{'readonly':[('frecuency_type','=', 'fixed')]}"/>
-								</tree>
-							</field>
-						</group>
-					</xpath-->
 					<xpath expr="//field[@name='schedule_pay']" position="replace">
 						<field name="schedule_pay"/>
 					</xpath>
-				<!--xpath expr="//field[@name='job_id']" position="after">
-               			<field name="payroll_type" required="1"/>
-           			</xpath-->
 				</data>
 			</field>
 		</record>
 
-		<record model="ir.actions.act_window" id="open_view_contract_news_concepts">
-			<field name="name">open.view.contract.news.concepts</field>
-			<field name="res_model">hr.contract.news.concepts</field>
-			<field name="view_type">form</field>
-			<field name="view_mode">form,tree</field>
-		</record>
+		<!--<record model="ir.actions.act_window" id="open_view_contract_news_concepts">-->
+			<!--<field name="name">open.view.contract.news.concepts</field>-->
+			<!--<field name="res_model">hr.contract.news.concepts</field>-->
+			<!--<field name="view_type">form</field>-->
+			<!--<field name="view_mode">form,tree</field>-->
+		<!--</record>-->
 
 		<record model="ir.actions.act_window" id="open_view_ars">
 			<field name="name">open.view.ars</field>
@@ -259,37 +43,37 @@
 			<field name="view_mode">form,tree</field>
 		</record>
 
-		<menuitem name="Contract News Concepts" action="open_view_contract_news_concepts" parent="hr.menu_hr_configuration"  id="menu_contract_news_concepts" />
+		<!--<menuitem name="Contract News Concepts" action="open_view_contract_news_concepts" parent="hr.menu_hr_configuration"  id="menu_contract_news_concepts" />-->
 		<menuitem name="Careers" action="open_view_careers" parent="hr.menu_hr_configuration"  id="menu_employee_careers" />
 		<menuitem name="ARS" action="open_view_ars" parent="hr.menu_hr_configuration" id="menu_employee_ars"/>
 
-		<record model="ir.ui.view" id="hr_contract_news_concepts_form">
-			<field name="name">hr.contract.news.concepts.form</field>
-			<field name="model">hr.contract.news.concepts</field>
-			<field name="type">form</field>
-			<field name="arch" type="xml">
-				<form string="Contract News Concepts" version="7.0">
-					<group name="hr_contract_news" string="Contract News Concepts">
-						<field name="code" />
-						<field name="name"/>
-						<field name="category_id"/>
-					</group>
-				</form>
-			</field>
-		</record>
+		<!--<record model="ir.ui.view" id="hr_contract_news_concepts_form">-->
+			<!--<field name="name">hr.contract.news.concepts.form</field>-->
+			<!--<field name="model">hr.contract.news.concepts</field>-->
+			<!--<field name="type">form</field>-->
+			<!--<field name="arch" type="xml">-->
+				<!--<form string="Contract News Concepts" version="7.0">-->
+					<!--<group name="hr_contract_news" string="Contract News Concepts">-->
+						<!--<field name="code" />-->
+						<!--<field name="name"/>-->
+						<!--<field name="category_id"/>-->
+					<!--</group>-->
+				<!--</form>-->
+			<!--</field>-->
+		<!--</record>-->
 
-		<record model="ir.ui.view" id="hr_contract_news_concepts_tree">
-			<field name="name">hr.contract.news.concepts.tree</field>
-			<field name="model">hr.contract.news.concepts</field>
-			<field name="type">tree</field>
-			<field name="arch" type="xml">
-				<tree string="Contract News Concepts" version="7.0">
-					<field name="code" />
-					<field name="name"/>
-					<field name="category_id"/>
-				</tree>
-			</field>
-		</record>
+		<!--<record model="ir.ui.view" id="hr_contract_news_concepts_tree">-->
+			<!--<field name="name">hr.contract.news.concepts.tree</field>-->
+			<!--<field name="model">hr.contract.news.concepts</field>-->
+			<!--<field name="type">tree</field>-->
+			<!--<field name="arch" type="xml">-->
+				<!--<tree string="Contract News Concepts" version="7.0">-->
+					<!--<field name="code" />-->
+					<!--<field name="name"/>-->
+					<!--<field name="category_id"/>-->
+				<!--</tree>-->
+			<!--</field>-->
+		<!--</record>-->
 
 
 		<record model="ir.ui.view" id="hr_employee_ars_form">
@@ -400,12 +184,6 @@
 								</field>
 							</page>
 						</xpath>
-						<!--<xpath expr="//page[@string='Personal Information']" position="after">
-							<page name="events_information" string="Events Information">
-								<field name="event_training_id"/>
-								<field name="events_ids_registration"/>
-							</page>
-						</xpath>-->
 				</data>
 			</field>
 		</record>
@@ -480,12 +258,6 @@
 			  </xpath>
 			  <xpath expr="//field[@name='name']" position="replace">
 			    <field name="name" invisible="True"/>
-			  </xpath>
-			  <xpath expr="//label[@for='name']" position="before">
-			    <h2>
-			      <label for="name_onchange" class="oe_edit_only"/>
-			      <field name="name_onchange" on_change="onchange_name(name_onchange, context)"/>
-			    </h2>
 			  </xpath>
 			</field>
 		</record>
