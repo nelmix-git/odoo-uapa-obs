@@ -13,7 +13,7 @@
         <field name="arch" type="xml">
             <form string="Internal Requisition">
                 <header>               
-                    <button name="cancel" states="draft,valid,confirm,approve,waiting" string="Cancel" type="object" />
+                    <button name="cancel" states="draft,valid,confirm,approve,pre_approve,waiting,delivery,ready" string="Cancel" type="object" />
                     <button name="confirm" states="draft" string="Confirmar Solicitud" type="object" class="oe_highlight" groups="internal_requisition.internal_requisition_user" />
                     <button name="first_validate" states="confirm" string="Validar Solicitud" type="object" class="oe_highlight" groups="internal_requisition.internal_requisition_manager" />
                     <!--button name="pre_approve" states="valid" string="Aprobar Solicitud" type="object" class="oe_highlight"  groups="__export__.res_groups_140"/-->

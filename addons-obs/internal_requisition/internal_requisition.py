@@ -249,8 +249,9 @@ class internal_requisition(models.Model):
                 move_ids.append(int(move_obj.create(vals)))
             if len(move_ids):
                 vals_pick = {
-                    'name':ir_seq_name,
-                    'origin':req.name,
+                    'partner_id': req.user_id.partner_id.id,
+                    'name': ir_seq_name,
+                    'origin': req.name,
                     'date': time.strftime('%Y-%m-%d %H:%M:%S'),
                     'picking_type_id': pick_type and pick_type.id or False,
                     'journal_id': journals and journals.id or False,
