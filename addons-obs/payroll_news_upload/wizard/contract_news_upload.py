@@ -134,7 +134,6 @@ class ContractNewsUpload(models.TransientModel):
                         end_date = False
 
                         if values['Tipo de frecuencia'] == 'variable':
-                            import pdb; pdb.set_trace()
                             start_date = datetime.datetime.strptime(values['Fecha inicial'], '%d-%m-%Y').date() or False
                             frequency_number = (int(values['Numero de veces'])-1) or 0
                             val['start_date'] = start_date

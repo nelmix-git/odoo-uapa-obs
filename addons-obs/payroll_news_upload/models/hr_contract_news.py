@@ -71,7 +71,6 @@ class HrContractNews(models.Model):
         """
         Compute benefit lines
         """
-        import pdb; pdb.set_trace()
         date_from = from_string(payslip.date_from)
         date_to = from_string(payslip.date_to)
         duration = (date_to - date_from).days + 1

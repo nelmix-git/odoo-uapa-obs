@@ -64,7 +64,6 @@ class HrSalaryRule(models.Model):
         """ Filter the new records on the payslip
         :rtype: record set of hr.payslip.new.line
         """
-        import pdb; pdb.set_trace()
         self.ensure_one()
 
         news = payslip.news_line_ids
